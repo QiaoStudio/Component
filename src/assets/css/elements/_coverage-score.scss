@@ -1,0 +1,34 @@
+/**
+  * Coverage Score Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/coverage-score";
+
+/**
+  * Default Coverage Score style
+  */
+
+.dp-coverage-score {
+  display: inline-block;
+  border: 1px solid $color-border-blue-1;
+  border-radius: 14px;
+  padding: 3px 7px;
+  color: $color-text-blue-1;
+  font-family: $font-family-primary;
+  font-size: $font-size-16;
+  line-height: $line-height-coverage-score;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed("font-size-16");
+  }
+
+  @include themify($themes-dp-coverage-score) {
+    padding-top: themed("padding-top");
+    padding-bottom: themed("padding-bottom");
+    line-height: themed("line-height-coverage-score");
+  }
+}

@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    #BOX
+\*------------------------------------*/
+
+/**
+  * A box theme applies spacing, a border, and rounded corners to areas of content
+  */
+
+@import "~assets/css/settings/themes/utilities/box";
+
+/**
+  * Tile
+  */
+
+.dp-tile {
+  border-radius: $border-radius-base;
+  background-color: $color-tile-bg;
+
+  &:hover:not(.dp-tile--readonly) {
+    cursor: pointer;
+  }
+
+  &.selected {
+    border: 2px solid $color-tile-border-selected;
+  }
+
+  &:not(.dp-tile__outline) {
+    transition: all 0.15s ease-in-out;
+    box-shadow: $color-tile-box-shadow;
+
+    &:hover:not(.dp-tile--readonly) {
+      transform: translateY(-2px);
+      box-shadow: $color-tile-box-shadow-hover;
+    }
+  }
+
+  &__outline {
+    border: 1px solid $color-tile-outline-border;
+
+    &:hover:not(.dp-tile--readonly) {
+      border: 2px solid $color-tile-outline-border-hover;
+    }
+
+    &.selected {
+      &:hover:not(.dp-tile--readonly) {
+        border-color: $color-tile-outline-border-selected-hover;
+      }
+    }
+  }
+
+  @include themify($themes-dp-tile) {
+    background-color: themed("color-tile-bg");
+
+    &.selected {
+      border-color: themed("color-tile-border-selected");
+    }
+
+    &:not(.dp-tile__outline) {
+      box-shadow: themed("color-tile-box-shadow");
+
+      &:hover:not(.dp-tile--readonly) {
+        box-shadow: themed("color-tile-box-shadow-hover");
+      }
+    }
+
+    &__outline {
+      border-color: themed("color-tile-outline-border");
+
+      &:hover:not(.dp-tile--readonly) {
+        border-color: themed("color-tile-outline-border-hover");
+      }
+
+      &.selected {
+        &:hover:not(.dp-tile--readonly) {
+          border-color: themed("color-tile-outline-border-selected-hover");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modules/Com Navbar cases without Timers when navbar transition started, navbar transition enter should be triggered 1`] = `
+<header class="dp-navbar dp-navbar--fixed">
+  <div class="dp-navbar__menu dp-navbar__no-transition">
+    <div class="dp-navbar__brand">
+      <dp-brand-stub country="" type="" fallbacklogo="https://picsum.photos/121/36" fallbacktagline="https://picsum.photos/121/11"></dp-brand-stub>
+    </div>
+    <div class="dp-navbar__items">
+      <div class="dp-navbar__items--desktop">
+        <div class="dp-navbar__bg-wrapper">
+          <div class="dp-navbar__bg" style="transform: translate(0px) scale(0, 0);"></div>
+        </div>
+        <nav>
+          <ul>
+            <li class="dp-navbar__item">
+              <a href="#"><span>
+                    Insurance
+                    <i aria-hidden="true" class="fa fa-caret-down dp-button__icon--right"></i></span></a>
+            </li>
+            <li class="dp-navbar__item">
+              <a href="https://www.xxxxxx.com/sg/credit-card"><span>
+                    Credit cards
+                    <i aria-hidden="true" class="fa fa-caret-down dp-button__icon--right"></i></span></a>
+            </li>
+            <li class="dp-navbar__item">
+              <a href="#"><span>
+                    Loans
+                    <i aria-hidden="true" class="fa fa-caret-down dp-button__icon--right"></i></span></a>
+            </li>
+            <li class="dp-navbar__item">
+              <a href="#"><span>
+                    Banking
+                    <i aria-hidden="true" class="fa fa-caret-down dp-button__icon--right"></i></span></a>
+            </li>
+            <li>
+              <a href="https://www.xxxxxx.com/sg/blog" class="dp-button dp-navbar__item dp-button--sm dp-button--text"><span>Blog</span>
+                <link class="rippleJS">
+              </a>
+            </li>
+            <!---->
+          </ul>
+        </nav>
+      </div>
+      <div class="dp-navbar__items--mobile">
+        <a href="#" class="dp-navbar__toggle"><span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="dp-navbar__content" style="transform: translateX(0px);"><span name="no-mode-translate-fade" tag="ul"><li data-sub-index="0" class="dp-navbar__sub" style="display: none;"><div class="dp-megamenu"><div><span>Compare insurance</span>
+    <ul class="dp-megamenu__link--two-column">
+      <li class="dp-megamenu__link">
+        <a href="/sg/travel-insurance" target="_self"><span class="dp-icon dp-icon__product--travel-insurance dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Travel Insurance</span></a>
+      </li>
+      <li class="dp-megamenu__link">
+        <a href="/sg/car-insurance" target="_self"><span class="dp-icon dp-icon__product--car-insurance dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Car Insurance</span></a>
+      </li>
+      <li class="dp-megamenu__link">
+        <a href="/sg/personal-accident" target="_self"><span class="dp-icon dp-icon__product--health-insurance dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Driver &amp; Passenger' Personal Accident</span></a>
+      </li>
+    </ul>
+  </div>
+  <div><span>Promotion</span>
+    <div>
+      <div class="dp-megamenu__article">
+        <a href="/sg/promotion" target="_self">
+          <div class="dp-megamenu__article-img">
+            <img src="https://picsum.photos/120" alt="Learn a bunch of stuff here">
+          </div>
+          <div><span class="dp-megamenu__article-title">Learn a bunch of stuff here</span>
+            <p class="dp-megamenu__article-desc">Don't miss the exclusive campaign because you don't want to</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+  </li>
+  <li data-sub-index="1" class="dp-navbar__sub" style="display: none;">
+    <div class="dp-megamenu">
+      <div><span>Compare credit cards</span>
+        <ul class="dp-megamenu__link--two-column">
+          <li class="dp-megamenu__link">
+            <a href="/sg/promotion" target="_self"><span class="dp-icon dp-icon__brand--promotion dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Promotion</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/reward" target="_self"><span class="dp-icon dp-icon__brand--reward dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Reward</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/ewallet" target="_self"><span class="dp-icon dp-icon__product--ewallet dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Ewallet</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/robofinance" target="_self"><span class="dp-icon dp-icon__product--robofinance dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Robofinance</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/stocks" target="_self"><span class="dp-icon dp-icon__product--stocks dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Stocks</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/bonds" target="_self"><span class="dp-icon dp-icon__product--bonds dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Bonds</span></a>
+          </li>
+        </ul>
+      </div>
+      <div><span>GoBear Credit cards</span>
+        <div>
+          <div class="dp-megamenu__article">
+            <a href="/sg/credit-cards" target="_self">
+              <div class="dp-megamenu__article-img">
+                <img src="https://picsum.photos/120" alt="New Credit cards">
+              </div>
+              <div><span class="dp-megamenu__article-title">New Credit cards</span>
+                <p class="dp-megamenu__article-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-sub-index="2" class="dp-navbar__sub" style="display: none;">
+    <div class="dp-megamenu">
+      <div><span>Compare loans</span>
+        <ul class="">
+          <li class="dp-megamenu__link">
+            <a href="/sg/personal-loan" target="_self"><span class="dp-icon dp-icon__product--personal-loan dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Personal Loan</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/home-loan" target="_self"><span class="dp-icon dp-icon__product--home-loan dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Home Loan</span></a>
+          </li>
+        </ul>
+      </div>
+      <div><span>GoBear TV</span>
+        <div>
+          <div class="dp-megamenu__article">
+            <a href="/sg/promotion" target="_self">
+              <div class="dp-megamenu__article-img">
+                <img src="https://picsum.photos/120" alt="EP 22: Top 5 personal loan myths">
+              </div>
+              <div><span class="dp-megamenu__article-title">EP 22: Top 5 personal loan myths</span>
+                <p class="dp-megamenu__article-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-sub-index="3" class="dp-navbar__sub" style="display: none;">
+    <div class="dp-megamenu">
+      <div><span>Compare banking products</span>
+        <ul class="dp-megamenu__link--two-column">
+          <li class="dp-megamenu__link">
+            <a href="/sg/savings-account" target="_self"><span class="dp-icon dp-icon__product--savings-account dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Saving account</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/fixed-deposit" target="_self"><span class="dp-icon dp-icon__product--fixed-deposit dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Fixed deposit</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/ewallet" target="_self"><span class="dp-icon dp-icon__product--ewallet dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Ewallet</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/robofinance" target="_self"><span class="dp-icon dp-icon__product--robofinance dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Robofinance</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/stocks" target="_self"><span class="dp-icon dp-icon__product--stocks dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Stocks</span></a>
+          </li>
+          <li class="dp-megamenu__link">
+            <a href="/sg/bonds" target="_self"><span class="dp-icon dp-icon__product--bonds dp-icon--sm-only"></span> <span class="dp-megamenu__link-label">Bonds</span></a>
+          </li>
+        </ul>
+      </div>
+      <div><span>Blog</span>
+        <div>
+          <div class="dp-megamenu__article">
+            <a href="/sg/promotion" target="_self">
+              <div class="dp-megamenu__article-img">
+                <img src="https://picsum.photos/120" alt="Learn a bunch of stuff here">
+              </div>
+              <div><span class="dp-megamenu__article-title">Learn a bunch of stuff here</span>
+                <p class="dp-megamenu__article-desc">Don't miss the exclusive campaign because you don't want to</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-sub-index="4" class="dp-navbar__sub" style="display: none;">
+    <div class="dp-megamenu"></div>
+  </li>
+  </span>
+  </div>
+</header>
+`;

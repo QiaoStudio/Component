@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/modules/Com Article Header when article header is initialized, article header should match snapshot 1`] = `
+<div class="dp-article-header">
+  <div>
+    <dp-breadcrumbs-stub levels="[object Object],[object Object]"></dp-breadcrumbs-stub>
+    <h1 class="dp-title">Title 1</h1>
+    <div class="dp-theme-article">
+      <dp-author-byline-stub author="Walter White" authoravatar="https://picsum.photos/62" alt="Walter White" time="Thu, 22 Nov 2018 00:00:00 GMT" maxheight="40" maxwidth="40" formatter="DD MMM YYYY" href="http://xxxxxx.com"></dp-author-byline-stub>
+    </div>
+  </div>
+  <div>
+    <div class="dp-article-header__image">
+      <img src="https://picsum.photos/100/100" alt="New Image" class="lazy-loading" width="60" height="60">
+      <dp-loader-stub></dp-loader-stub>
+    </div>
+  </div>
+</div>
+`;

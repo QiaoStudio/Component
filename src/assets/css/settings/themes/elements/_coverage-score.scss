@@ -1,0 +1,22 @@
+@import "../../../settings/style";
+/**
+  * Coverage Score
+  */
+
+$padding-top-coverage-score-th: 4px;
+$padding-bottom-coverage-score-th: 3px;
+$font-weight-coverage-score-th: 400;
+$line-height-coverage-score: px-to-rate(19px, 16px);
+
+/**
+  * Themes
+  */
+
+$themes-dp-coverage-score: (
+  th: (
+    padding-top: $padding-top-coverage-score-th,
+    padding-bottom: $padding-bottom-coverage-score-th,
+    font-weight: $font-weight-coverage-score-th,
+    line-height-coverage-score: px-to-rate(19px, 22px),
+  )
+);

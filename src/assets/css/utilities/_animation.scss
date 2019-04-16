@@ -1,0 +1,87 @@
+/*------------------------------------*\
+    #ANIMATION
+\*------------------------------------*/
+
+/**
+  * Utility classes for animation within Com
+  */
+
+/**
+  * Vue Transition
+  */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/**
+  * Flip
+  */
+
+$flip-transition-time: 0.4s;
+
+.dp-flip-next {
+
+  @include xs {
+    animation: flip-left $flip-transition-time;
+  }
+
+  @include md {
+    animation: flip-up $flip-transition-time;
+  }
+
+  @include onlyTablet {
+    animation: flip-up $flip-transition-time;
+  }
+}
+
+.dp-flip-previous {
+
+  @include xs {
+    animation: flip-right $flip-transition-time;
+  }
+
+  @include md {
+    animation: flip-down $flip-transition-time;
+  }
+
+  @include onlyTablet {
+    animation: flip-down $flip-transition-time;
+  }
+}
+
+/**
+  * Shuffle
+  */
+
+.dp-shuffle {
+
+  /* moving */
+  &-move {
+    transition: all 300ms ease-in-out 50ms;
+  }
+
+  /* appearing */
+  &-enter-active {
+    animation: pop-in 300ms;
+  }
+
+  /* disappearing */
+  &-leave-active {
+    animation: pop-out 300ms;
+    position: absolute;
+    z-index: 0;
+  }
+
+  /* appear at / disappear to */
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+}

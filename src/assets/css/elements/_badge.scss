@@ -1,0 +1,19 @@
+@import "~assets/css/settings/style";
+
+.dp-badge {
+  display: flex;
+  justify-content: center;
+  &__content {
+    background-color: $color-background-green-1;
+    font-family: $font-family-primary;
+    color: $color-text-white-1;
+    font-size: $font-size-10;
+    border-radius: 10px;
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

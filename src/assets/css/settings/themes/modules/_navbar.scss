@@ -1,0 +1,52 @@
+/**
+  * Navbar
+  */
+
+$max-width-navbar-desktop: 787px;
+$max-height-navbar-desktop: 76px;
+$height-navbar-mobile: 60px;
+$box-shadow-navbar: 0 3px 5px 0 rgba($color-border-black-1, 0.05);
+$padding-x-navbar: 32px;
+$y-navbar-item: 28px;
+$x-navbar-item: 24px;
+$line-height-navbar-item: 20px;
+$margin-y-navbar-hamburger: 12px;
+$width-navbar-hamburger: 24px;
+$height-navbar-hamburger: 4px;
+$transition-navbar-text-color: color 0.25s;
+$transition-navbar-text-icon: transform 0.25s;
+$transition-navbar-menu: box-shadow 0.25s, background-color 0.25s;
+$transition-delay-navbar-menu: 0.3s;
+$transition-delay-navbar-menu-active: 0s;
+$transition-navbar-brand: fill 0.25s;
+$transition-navbar-bg-wrapper: opacity 0.25s;
+$transition-navbar-bg: transform 0.25s;
+$transition-navbar-content: transform 0.25s;
+$transition-navbar-sub: opacity 0.25s;
+$margin-left-navbar-right: 20px;
+$transition-delay-navbar: 0.25s;
+
+/**
+  * Themes
+  */
+
+$themes-dp-navbar: (
+  dark: (
+    background-color-default-navbar: transparent,
+    fill-navbar-brand-bear: $color-background-black-1,
+    fill-navbar-brand-text: $color-text-gray-5,
+    color-navbar-item-default: $color-text-white-1,
+    color-navbar-item-active: $color-text-green-1,
+    color-active-menu-navbar-item-span: $color-text-black-2,
+    border-color-navbar-right-ghost-primary-active: $color-border-black-2,
+    color-navbar-right-ghost-primary-active: $color-border-black-2,
+    color-navbar-right-ghost-primary-hover: $color-border-white-1,
+    background-color-navbar-right-ghost-primary: transparent,
+    background-color-navbar-right-ghost-primary-hover: $color-text-green-2,
+    background-color-navbar-right-primary: $color-text-green-1,
+    background-color-navbar-right-primary-hover: $color-text-green-2
+  ),
+  th: (
+    font-size-caret: $font-size-14
+  )
+);

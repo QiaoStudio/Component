@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modules/Com Panel when panel button text is set, panel should display correct panel button text and should not nest block elements 1`] = `
+<div class="dp-panel">
+  <div class="dp-panel__wrapper">
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <div class="dp-panel__announcement text-center">
+      <dp-announcement-stub labeltext="New" content="" labelcolor="dp-label--red" labelsize="" islinked="" target="true"></dp-announcement-stub>
+    </div>
+    <div class="dp-panel__body"></div>
+    <div class="dp-panel__cta">
+      <a href="http://google.com" class="dp-button dp-button--block" target="_blank"><span>Submit</span>
+        <link class="rippleJS">
+      </a>
+      <!---->
+    </div>
+  </div>
+</div>
+`;

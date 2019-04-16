@@ -1,0 +1,67 @@
+@import "~assets/css/elements/common-field-area";
+/**
+  ** text input
+  **/
+
+.dp-field__input--text {
+  &.dp-field__input_box {
+    padding: 0;
+    .dp-field__area {
+      width: 100%;
+      display: block;
+      border: 1px solid $color-border-gray-3;
+      border-radius: $border-radius-base;
+      background-color: $color-background-white-1;
+      padding: 14px;
+      line-height: 19px;
+      text-align: center;
+      &:focus, &:hover {
+        border-color: $color-border-gray-5;
+      }
+      &,&:focus, &:hover {
+        color: $color-text-gray-5;
+        &.dp-field__has-value {
+          color: $color-text-black-2;
+        }
+        &::-webkit-input-placeholder {
+          color: $color-text-gray-5;
+        }
+        &:-ms-input-placeholder {
+          // IE10+
+          color: $color-text-gray-5;
+        }
+        &:-moz-placeholder {
+          // Firefox4-18
+          color: $color-text-gray-5;
+        }
+        &::-moz-placeholder {
+          // Firefox19+
+          color: $color-text-gray-5;
+        }
+      }
+    }
+    &.error {
+      .dp-field__area {
+        &,&:focus,&:hover {
+          border-color: themed("color-dp-field-error-area-border");
+        }
+      }
+    }
+
+    .dp-field__invalid {
+      margin-top: 4px;
+      font-weight: normal;
+      position: relative;
+    }
+  }
+
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}

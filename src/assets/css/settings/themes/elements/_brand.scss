@@ -1,0 +1,39 @@
+@import "../../../settings/style";
+/**
+  * Brand
+  */
+
+$width-svg-logo: 121px;
+$height-svg-logo: 51px;
+$height-svg-logo-hk: 53px;
+$height-svg-logo-th: 53px;
+$width-svg-logo-no-tagline-mobile: 93px;
+$height-svg-logo-no-tagline-mobile: 28px;
+$height-svg-logo-no-tagline-desktop: 36px;
+$width-svg-blog: 42px;
+$height-svg-blog: 19px;
+$width-svg-logo-with-blog-mobile: 141px;
+$width-svg-logo-with-blog-desktop: 181px;
+$height-svg-tagline: 11px;
+$height-svg-tagline-hk: 13px;
+$height-svg-tagline-th: 13px;
+
+/**
+  * Themes
+  */
+
+$themes-dp-brand: (
+  hk: (
+    height-svg-logo: $height-svg-logo-hk,
+    height-svg-tagline: $height-svg-tagline-hk
+  ),
+  th: (
+    height-svg-logo: $height-svg-logo-th,
+    height-svg-tagline: $height-svg-tagline-th
+  ),
+  dark: (
+    fill-svg-bear: $color-background-white-1,
+    fill-svg-text: $color-background-white-1,
+    fill-svg-blog: $color-background-white-1
+  )
+);

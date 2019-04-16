@@ -1,0 +1,32 @@
+@import "../../../settings/style";
+/**
+  * Coverage Detail
+  */
+
+$padding-coverage-detail-tr-desktop: 8px;
+$padding-coverage-detail-tr-mobile: 8px;
+$line-clamp-coverage-detail: 2;
+$flex-direction-coverage-detail-tr-mobile: column;
+$max-height-coverage-detail-td-desktop: 34px;
+$line-height-coverage-detail-list-content: 19px;
+/**
+  * Themes
+  */
+
+$themes-dp-coverage-detail: (
+  th: (
+    padding-coverage-detail-tr-desktop: 16px 0 0 0,
+    padding-coverage-detail-tr-mobile: $padding-coverage-detail-tr-mobile,
+    line-clamp-coverage-detail-desktop: 1,
+    line-clamp-coverage-detail-mobile: 2,
+    max-height-coverage-detail-td-desktop: 17px,
+    max-height-coverage-detail-td-mobile: 34px,
+    padding-coverage-detail-td-mobile: 0,
+    margin-left-coverage-detail-content: 8px,
+    text-align-coverage-detail-content: right,
+    flex-direction-coverage-detail-tr-mobile: row,
+    justify-content-coverage-detail-tr-mobile: space-between,
+    line-height-coverage-detail-list-content: 17px,
+    font-size-coverage-detail-list-content: 22px,
+  )
+);

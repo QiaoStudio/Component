@@ -1,0 +1,66 @@
+
+/**
+  * Rating Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/rating";
+
+/**
+  * Default Rating style
+  */
+
+.dp-rating {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  background-color: $color-background-white-1;
+  border: 0 none;
+  padding: 0;
+  &:not(span) {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      .dp-rating__label {
+        text-decoration: underline;
+        color: $color-text-blue-1;
+      }
+    }
+  }
+  &__star {
+    padding-right: 4px;
+    line-height: 12px;
+
+    span:not(:first-child) {
+      margin-left: 1px;
+    }
+  }
+
+  &__label {
+    font-family: $font-family-secondary;
+    font-size: $font-size-14;
+    line-height: $line-height-label;
+    color: $color-text-gray-6;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-14");
+    }
+    @include themify($themes-dp-rating) {
+      line-height: themed("line-height-label");
+    }
+  }
+
+  .fa-star-o,
+  .fa-star {
+    width: 12px;
+    font-size: px-to-rem(12px);
+  }
+
+  .fa-star-o {
+    color: $color-text-gray-5;
+  }
+
+  .fa-star {
+    color: $color-text-blue-1;
+  }
+}

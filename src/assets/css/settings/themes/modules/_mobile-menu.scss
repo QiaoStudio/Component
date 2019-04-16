@@ -1,0 +1,28 @@
+/**
+  * Mobile Menu
+  */
+
+$background-color-mobile-menu: $color-background-black-3;
+$width-mobile-menu: 310px;
+$background-color-backdrop-mobile-menu: rgba($color-background-black-1, 0);
+$background-color-backdrop-mobile-menu-open: rgba($color-background-black-1, 0.5);
+$border-light-mobile-menu: 1px solid rgba($color-border-white-1, 0.1);
+$margin-right-close-mobile-menu: -4px;
+$width-close-mobile-menu: 36px;
+$height-close-mobile-menu: 36px;
+$width-item-toggle-mobile-menu: 10px;
+$color-items-title-mobile-menu: $color-text-gray-5;
+$transform-item-toggle-mobile-menu: translate(-50%, -50%) rotate(90deg);
+$transform-item-toggle-mobile-menu-open: translate(-50%, -50%) rotate(45deg);
+$transform-item-toggle-mobile-menu-open-r: translate(-50%, -50%) rotate(-45deg);
+$transform-ease-mobile-menu: transform 0.3s ease;
+$background-color-ease-mobile-menu: background-color 0.3s ease;
+
+/**
+  * Themes
+  */
+
+// $themes-dp-mobile-menu: (
+//   th: (),
+//   hk: ()
+// );

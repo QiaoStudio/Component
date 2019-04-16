@@ -1,0 +1,125 @@
+@import "../settings/style";
+/**
+  * Announcement Theme settings
+  */
+
+/**
+  * Default Announcement style
+  */
+
+.dp-announcement {
+  display: inline-flex;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 300px;
+  font-family: $font-family-secondary;
+  text-align: left;
+  background-color: rgba($color-background-black-1, 0.03);
+
+  /**
+    * Variant
+    */
+
+  &--linked {
+    @extend %announcement-linked-style;
+
+    a {
+      display: flex;
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  &--inverse {
+    @extend %announcement-inverse-style;
+  }
+
+  &--empty {
+    @extend %announcement-empty-style;
+  }
+
+  &__label {
+    align-self: baseline;
+    flex: 0 1 auto;
+  }
+
+  &__content {
+    align-self: center;
+    flex: 1 0 0;
+    padding-left: 8px;
+    font-size: $font-size-14;
+    line-height: 1.2;
+    color: $color-text-black-2;
+    @include truncate(2.8em, 2);
+  }
+}
+
+/**
+  * Announcement Linked style
+  */
+
+%announcement-linked-style {
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($color-background-black-1, 0.05);
+    transform: translateY(-2px);
+  }
+
+  &.dp-announcement--empty {
+
+    &:hover,
+    &:focus {
+      @extend %announcement-empty-style;
+    }
+  }
+}
+
+/**
+  * Announcement Inverse style
+  */
+
+%announcement-inverse-style {
+  background-color: rgba($color-background-white-1, 0.1);
+  transition: transform 0.25s ease;
+
+  &.dp-announcement--linked {
+
+    &:hover,
+    &:focus {
+      background-color: rgba($color-background-white-1, 0.1);
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    .dp-announcement__content {
+      color: $color-text-white-1;
+    }
+  }
+
+  &.dp-announcement--empty {
+
+    &:hover,
+    &:focus {
+      @extend %announcement-empty-style;
+    }
+  }
+
+  .dp-announcement__content {
+    color: $color-text-white-1;
+  }
+}
+
+/**
+  * Announcement Empty style
+  */
+
+%announcement-empty-style {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+}

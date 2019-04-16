@@ -1,0 +1,30 @@
+/**
+  * checkbox color
+  */
+$color-checkbox-label: $color-text-black-2;
+$color-checkbox-label-disabled: $color-text-gray-disabled;
+$color-checkbox-label-border: $color-border-black-2;
+$color-checkbox-label-border-checked: $color-border-white-1;
+$color-checkbox-label-border-disabled: $color-border-gray-disabled;
+$color-checkbox-label-border-focused: $color-background-green-1;
+$color-checkbox-label-bg-checked: $color-background-green-1;
+$color-checkbox-label-bg-checked-disabled: $color-background-gray-3;
+
+$color-checkbox-invalid: $color-text-red-1;
+
+/**
+  * themes
+  */
+$themes: (
+  dark: (
+    color-checkbox-label: $color-text-gray-5,
+    color-checkbox-label-disabled: $color-text-gray-disabled,
+    color-checkbox-label-border: $color-border-black-1,
+    color-checkbox-label-border-checked:transparent $color-border-white-1 $color-border-white-1 transparent,
+    color-checkbox-label-border-disabled: $color-border-gray-disabled,
+    color-checkbox-label-border-focused: $color-background-green-1,
+    color-checkbox-label-bg-checked: $color-background-black-2,
+    color-checkbox-label-bg-checked-disabled: $color-background-gray-3,
+    color-checkbox-invalid: $color-text-red-1
+  )
+);

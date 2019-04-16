@@ -1,0 +1,58 @@
+/**
+  * Article tile module
+  */
+@import "~assets/css/settings/style";
+
+.dp-mobile-dual-key-value-tile {
+  position: relative;
+  &__body {
+    padding-bottom: 16px;
+    display: flex;
+    .key-value1 {
+      margin-left: 16px;
+      margin-right: 10px;
+      width: 50%;
+      display: inline-block;
+      overflow: hidden;
+    }
+    .key-value2 {
+      margin-left: 10px;
+      margin-right: 16px;
+      border: none;
+      width: 50%;
+      display: inline-block;
+      overflow: hidden;
+    }
+  }
+
+  &__logo {
+    text-align: left;
+    .dp-logo {
+      &>div {
+        font-size: $font-size-12;
+      }
+    }
+  }
+
+  &__exclusive {
+    position: absolute;
+    display: inline-block;
+    top: -20px;
+    right: 0;
+    z-index: 100;
+  }
+
+  &__promotion {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  &__hr {
+    margin-left: 16px;
+    margin-right: 16px;
+    border-top: 1px solid $color-border-gray-2;
+    margin-bottom: 14px;
+  }
+}

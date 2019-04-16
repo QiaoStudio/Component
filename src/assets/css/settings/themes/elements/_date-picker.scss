@@ -1,0 +1,12 @@
+$color-datepicker-popover-weekdays: $color-text-gray-6;
+$color-datepicker-popover: $color-text-black-2;
+
+/**
+  * themes
+  */
+$themes: (
+  dark: (
+    $color-datepicker-popover-weekdays: $color-text-black-1,
+    $color-datepicker-popover: $color-text-white-1,
+  )
+);

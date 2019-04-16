@@ -1,0 +1,181 @@
+/**
+  * Coverage Detail Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/coverage-detail";
+
+/**
+  * Default Coverage Detail style
+  */
+.dp-coverage-detail {
+  width: 100%;
+  font-family: $font-family-secondary;
+  @include xs {
+    border: 1px solid $color-border-gray-3;
+  }
+
+  .dp-coverage-detail__body {
+    .dp-coverage-detail__row {
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:first-child) {
+        padding-top: $padding-coverage-detail-tr-desktop;
+      }
+
+      [class^="dp-coverage-detail__cell-"] {
+        font-size: $font-size-12;
+        line-height: 17px;
+        color: $color-text-black-2;
+        flex-basis: 50%;
+        @include truncate($max-height-coverage-detail-td-desktop, $line-clamp-coverage-detail);
+        word-wrap: break-word;
+        padding: 0;
+      }
+
+      .dp-coverage-detail__cell-title {
+        text-align: left;
+        margin-right: 8px;
+      }
+
+      .dp-coverage-detail__cell-content {
+        text-align: right;
+      }
+
+      @include themify($themes-dp-coverage-detail) {
+        &:not(:first-child) {
+          padding: themed("padding-coverage-detail-tr-desktop");
+        }
+        [class^="dp-coverage-detail__cell-"] {
+          max-height: themed("max-height-coverage-detail-td-desktop");
+          -webkit-line-clamp: themed("line-clamp-coverage-detail-desktop");
+        }
+      }
+
+      @include themify($themes-fonts) {
+        [class^="dp-coverage-detail__cell-"] {
+          font-family: themed("font-family-secondary");
+          font-size: themed("font-size-12");
+        }
+      }
+    }
+    @include xs {
+      margin: 8px;
+      text-align: left;
+      .dp-coverage-detail__row {
+        padding: $padding-coverage-detail-tr-mobile;
+        flex-direction: $flex-direction-coverage-detail-tr-mobile;
+
+        &:not(:first-child) {
+          border-top: 1px solid $color-border-gray-3;
+          padding: $padding-coverage-detail-tr-mobile;
+        }
+
+        [class^="dp-coverage-detail__cell-"] {
+          font-family: $font-family-secondary;
+          font-size: $font-size-12;
+          text-align: left;
+          display: block;
+
+          &:first-child {
+            padding-bottom: 2px;
+          }
+        }
+
+        .dp-coverage-detail__cell-content {
+          text-align: left;
+        }
+      }
+      @include themify($themes-dp-coverage-detail) {
+        .dp-coverage-detail__row {
+          flex-direction: themed("flex-direction-coverage-detail-tr-mobile");
+          justify-content: themed("justify-content-coverage-detail-tr-mobile");
+          padding: themed("padding-coverage-detail-tr-mobile");
+
+          [class^="dp-coverage-detail__cell-"] {
+            max-height: themed("max-height-coverage-detail-td-mobile");
+            -webkit-line-clamp: themed("line-clamp-coverage-detail-mobile");
+            padding: themed("padding-coverage-detail-td-mobile");
+          }
+
+          &:not(:first-child) {
+            padding: themed("padding-coverage-detail-tr-mobile");
+          }
+
+          .dp-coverage-detail__cell-content {
+            text-align: themed("text-align-coverage-detail-content");
+            margin-left: themed("margin-left-coverage-detail-content");
+          }
+        }
+      }
+      @include themify($themes-fonts) {
+        .dp-coverage-detail__row {
+          [class^="dp-coverage-detail__cell-"] {
+            font-family: themed("font-family-secondary");
+            font-size: themed("font-size-12");
+          }
+        }
+      }
+    }
+  }
+}
+
+.dp-coverage-detail--list {
+  width: 100%;
+  .dp-coverage-detail__body {
+    display: flex;
+    justify-content: space-between;
+    .dp-coverage-detail__row {
+      flex: none;
+      display: flex;
+      flex-direction: column-reverse;
+      width: calc(20% - 16px);
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      [class^="dp-coverage-detail__cell-"] {
+        padding: 0;
+        color: $color-text-black-2;
+        font-family: $font-family-secondary;
+        @include truncate(38px, $line-clamp-coverage-detail);
+      }
+
+      .dp-coverage-detail__cell-content {
+        font-size: $font-size-14;
+        line-height: $line-height-coverage-detail-list-content;
+        flex-basis: 38px;
+      }
+
+      .dp-coverage-detail__cell-title {
+        margin-top: 4px;
+        max-height: 34px;
+        font-size: $font-size-12;
+        line-height: 17px;
+        flex-grow: 1;
+      }
+
+      @include themify($themes-dp-coverage-detail) {
+        .dp-coverage-detail__cell-content {
+          line-height: themed("line-height-coverage-detail-list-content");
+          font-size: themed("font-size-coverage-detail-list-content");
+        }
+
+        [class^="dp-coverage-detail__cell-"] {
+          -webkit-line-clamp: themed("line-clamp-coverage-detail-desktop");
+          max-height: themed("line-height-coverage-detail-list-content");
+        }
+      }
+
+      @include themify($themes-fonts) {
+        .dp-coverage-detail__cell-title {
+          font-size: themed("font-size-12");
+        }
+
+        [class^="dp-coverage-detail__cell-"] {
+          font-family: themed("font-family-secondary");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+/**
+  * Exclusive Theme settings
+  */
+
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/key-value-with-label";
+
+/**
+  * Default Progress bar style
+  */
+
+.dp-key-value-with-label {
+  font-family: $font-family-primary;
+  &--left-alignment {
+    text-align: left;
+  }
+  &--right-alignment {
+    text-align: right;
+  }
+  &--center-alignment {
+    text-align: center;
+  }
+
+  &__value-container {
+    display: inline-block;
+    height: px-to-em(29px, 24px);
+    font-size: $font-size-24;
+    color: $color-text-black-2;
+    font-weight: 500;
+    line-height: px-to-rate(30px, 24px);
+  }
+
+  &__text-top {
+    height: px-to-em(15px, 12px);
+    font-size: $font-size-12;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: px-to-rate(15px, 12px);
+    color: $color-text-gray-6;
+  }
+
+  &__text-bottom {
+    font-size: $font-size-12;
+    @include truncate(30px, 2);
+    line-height: px-to-rate(15px, 12px);
+    color: $color-text-gray-6;
+  }
+}

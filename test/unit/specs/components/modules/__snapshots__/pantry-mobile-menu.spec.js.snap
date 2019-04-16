@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modules/Com Mobile Menu cases without Timers when mobile menu is set, mobile menu should be shown 1`] = `
+<div class="dp-mobile-menu">
+  <div class="dp-mobile-menu__items">
+    <div class="dp-mobile-menu__header"><span>Menu</span>
+      <a href="#" class="dp-mobile-menu__close"></a>
+    </div>
+    <!---->
+    <div class="dp-mobile-menu__blocks">
+      <a href="/sg" class="dp-button dp-button--block dp-button--text"><span>Home</span>
+        <!---->
+      </a>
+    </div>
+    <nav>
+      <div class="dp-accordion-group">
+        <div class="accordion-group__title">
+          <div><span>Compare:</span></div>
+        </div>
+        <div class="accordion-group__items">
+          <div class="dp-accordion dp-accordion--icon-right">
+            <div class="accordion__header" tabindex="0"><span class="dp-button--text">
+              Insurance
+            </span></div>
+            <div class="accordion__body" style="display: none;" name="dp-accordion">
+              <div class="accordion__body-inner">
+                <ul>
+                  <li>
+                    <a href="/sg/travel-insurance" class="dp-button dp-button--block dp-button--text"><span>Travel Insurance</span>
+                      <!---->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/sg/car-insurance" class="dp-button dp-button--block dp-button--text"><span>Car Insurance</span>
+                      <!---->
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/sg/personal-accident" class="dp-button dp-button--block dp-button--text"><span>Driver &amp; Passenger' Personal Accident</span>
+                      <!---->
+                    </a>
+                  </li>
+                  <!---->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dp-mobile-menu__blocks">
+        <!---->
+      </div>
+    </nav>
+  </div>
+  <div class="dp-mobile-menu__backdrop"></div>
+</div>
+`;

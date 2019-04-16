@@ -1,0 +1,116 @@
+/**
+  * Default DatePicker style
+  */
+@import "~assets/css/elements/common-field-area";
+@import "~assets/css/settings/themes/elements/date-picker";
+.dp-field__datepicker {
+  .dp-field__area {
+    &.dp-field__area-single {
+      input {
+        min-width: 120px;
+      }
+    }
+    input {
+      display: block;
+      padding: 0;
+      width: 100%;
+      min-width: 218px;
+      max-width: 100%;
+      height: 19px;
+      font-size: inherit;
+      font-family: inherit;
+      color: inherit;
+      border: none;
+      background: none;
+
+      &[type=date] {
+        margin-top: -1px;
+        margin-bottom: -1px;
+
+        &::-webkit-calendar-picker-indicator,
+        &::-webkit-clear-button,
+        &::-webkit-inner-spin-button {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .popover-container {
+    width: 100%;
+  }
+
+  .popover-origin {
+    .c-weekdays {
+      font-size: $font-size-14;
+      font-family: $font-family-primary;
+      font-weight: 500;
+      color: $color-datepicker-popover-weekdays;
+    }
+
+    .c-day-content {
+      font-size: $font-size-14;
+      font-family: $font-family-primary;
+      font-weight: 400;
+      color: $color-datepicker-popover;
+      width: px-to-rem(28.8px);
+      height: px-to-rem(28.8px);
+    }
+
+    .c-arrow {
+      font-size: $font-size-22;
+    }
+
+    .c-table-cell {
+      font-size: $font-size-13;
+    }
+
+    .c-title {
+      font-size: $font-size-13;
+    }
+
+    .c-day-layer[class*="shift"] {
+      .c-day-background {
+        height: px-to-rem(28.8px) !important;
+      }
+    }
+
+    .c-day-layer[class*="translate"],
+    .c-day-scale-enter {
+      .c-day-background {
+        width: px-to-rem(28.8px) !important;
+        height: px-to-rem(28.8px) !important;
+      }
+    }
+
+    .c-header {
+      .c-arrow-layout .c-arrow {
+        font-size: $font-size-26;
+      }
+
+      .c-title-layout .c-title-popover .c-title-anchor .c-title {
+        font-size: $font-size-18;
+        font-family: $font-family-primary;
+        font-weight: 500;
+        color: $color-datepicker-popover;
+      }
+    }
+
+    /* Support a variety of styles */
+    @include themify($themes) {
+      .c-weekdays {
+        color: themed("color-datepicker-popover-weekdays");
+      }
+
+      .c-day-content {
+        color: themed("color-datepicker-popover");
+      }
+
+      .c-header {
+        .c-title-layout .c-title-popover .c-title-anchor .c-title {
+          color: themed("color-datepicker-popover");
+        }
+      }
+    }
+  }
+}

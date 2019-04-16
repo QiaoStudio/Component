@@ -1,0 +1,30 @@
+/**
+  * Logo Title Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/logo-title";
+
+/**
+* Default Logo Title style
+*/
+.dp-logo-title {
+  font-family: $font-family-secondary;
+  font-size: $font-size-14;
+  color: $color-text-gray-6;
+  text-align: left;
+  line-height: $line-height-content;
+  display: inline-block;
+  text-decoration: none;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed("font-size-14");
+  }
+  @include themify($themes-dp-logo) {
+    line-height: themed("line-height-content");
+  }
+
+  &__insure {
+    color: $color-text-black-2;
+  }
+}

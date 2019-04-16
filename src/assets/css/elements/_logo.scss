@@ -1,0 +1,116 @@
+@import "../settings/style";
+/**
+  * Default Logo style
+  */
+
+.dp-logo {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  &:hover {
+    .dp-logo-title {
+      text-decoration: underline;
+      color: $color-text-blue-1;
+      &__insure {
+        color: $color-text-blue-1;
+      }
+    }
+  }
+
+  .dp-logo-title {
+    padding-left: 12px;
+  }
+
+  &__img {
+    display: flex;
+    flex: none;
+    overflow: hidden;
+    &--mobile-left {
+      @include xs {
+        justify-content: flex-start;
+      }
+    }
+    &--mobile-right {
+      @include xs {
+        justify-content: flex-end;
+      }
+    }
+    &--mobile-ver-center {
+      @include xs {
+        align-items: center;
+      }
+    }
+    &--desktop-left {
+      @include md {
+        justify-content: flex-start;
+      }
+      @include onlyTablet {
+        justify-content: flex-start;
+      }
+    }
+    &--desktop-right {
+      @include md {
+        justify-content: flex-end;
+      }
+      @include onlyTablet {
+        justify-content: flex-end;
+      }
+    }
+    &--desktop-ver-center {
+      @include md {
+        align-items: center;
+      }
+      @include onlyTablet {
+        align-items: center;
+      }
+    }
+    &--mobile-top {
+      @include xs {
+        align-items: flex-start;
+      }
+    }
+    &--mobile-bottom {
+      @include xs {
+        align-items: flex-end;
+      }
+    }
+    &--mobile-hori-center {
+      @include xs {
+        justify-content: center;
+      }
+    }
+    &--desktop-top {
+      @include md {
+        align-items: flex-start;
+      }
+      @include onlyTablet {
+        align-items: flex-start;
+      }
+    }
+    &--desktop-bottom {
+      @include md {
+        align-items: flex-end;
+      }
+      @include onlyTablet {
+        align-items: flex-end;
+      }
+    }
+    &--desktop-hori-center {
+      @include md {
+        justify-content: center;
+      }
+      @include onlyTablet {
+        justify-content: center;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

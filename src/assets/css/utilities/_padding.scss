@@ -1,0 +1,29 @@
+@import "~assets/css/settings/mixins/spacing";
+/*------------------------------------*\
+    #PADDING
+\*------------------------------------*/
+
+/**
+  * Adjust whitespace by applying horizontal and vertical padding helpers
+  */
+
+@each $position in $positions {
+
+  /*
+   * None
+   */
+
+  @include removeSpacing($position, "padding");
+
+  /*
+   * With Spacing
+   */
+  @include mapSpacing($position, "padding");
+
+  /**
+    * With spacing and breakpoint
+    */
+  @each $screen in $screens {
+    @include mapScreenWithBreakpoint($position, "padding", $screen);
+  }
+}

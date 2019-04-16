@@ -1,0 +1,60 @@
+@import "../settings/style";
+.dp-field__launcher {
+  display: inline-block;
+  max-width: 100%;
+  .dp-button {
+    i {
+      margin-right: 6px;
+    }
+  }
+  .dp-tabs {
+    +.dp-button__cont {
+      margin-top: 24px;
+      text-align: center;
+      .dp-button {
+        min-width: 180px;
+      }
+    }
+  }
+  .dp-tabs {
+    .dp-tabs__content {
+      padding: 0;
+    }
+  }
+  .dp-field__group-wrap {
+    display: flex;
+    align-items: center;
+    .dp-button__cont {
+      margin: 8px;
+      .dp-button {
+        width: 100%;
+      }
+    }
+  }
+  .dp-field__col {
+    padding: 0;
+    margin: 12px 16px;
+  }
+  .dp-field__label {
+    .dp-popover {
+      margin-left: 10px;
+    }
+  }
+  @include xs {
+    width: 100%;
+    .dp-tabs {
+      +.dp-button__cont {
+        margin-top: 17px;
+      }
+    }
+    .dp-button__cont {
+      .dp-button {
+        width: 100%;
+      }
+    }
+    .dp-field__col {
+      width: 50%;
+      margin: 12px;
+    }
+  }
+}

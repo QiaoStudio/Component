@@ -1,0 +1,26 @@
+/**
+  * popup color
+  */
+$color-error-popup: $color-text-white-1;
+$color-error-popup-bg: $color-background-red-1;
+$color-error-popup-arrow-border: $color-border-red-1;
+$color-error-popup-boxshadow: rgba($color-box-shadow-black-1, 0.25);
+
+/**
+  * popup size
+  */
+$radius-error-popup-border: $border-radius-base;
+$padding-error-popup-content: 12px 14px 12px 16px;
+$line-height-error-content-large: 17px;
+
+/**
+  * themes
+  */
+$themes: (
+  dark: (
+    color-error-popup: $color-text-white-1,
+    color-error-popup-bg: $color-background-black-2,
+    color-error-popup-arrow-border: $color-border-black-2,
+    color-error-popup-boxshadow: rgba($color-box-shadow-white-1, 0.25)
+  )
+);

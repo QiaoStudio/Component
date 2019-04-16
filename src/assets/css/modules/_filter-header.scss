@@ -1,0 +1,44 @@
+@import "~assets/css/settings/style";
+
+.dp-filter-header {
+  padding: 6px 16px;
+  &--sticky {
+    height: 48px;
+    width: 100%;
+    background: $color-background-black-3;
+    .dp-button {
+      flex: 1;
+      margin: 8px;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__status {
+    font-size: $font-size-14;
+    font-family: $font-family-primary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__button,
+  &__button__edit,
+  &__button__filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__button {
+    .dp-button {
+      padding: 8px 10px;
+    }
+  }
+  &__label {
+    @include truncate(19px, 1);
+    text-align: left;
+    font-size: $font-size-12;
+    color: $color-text-gray-6;
+  }
+}

@@ -1,0 +1,168 @@
+/*------------------------------------*\
+    #GOBEAR ICONS
+\*------------------------------------*/
+
+@import "~assets/css/settings/style";
+
+/**
+  * Default Icon style
+  */
+
+.dp-icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  display: block;
+  @include icon-size-sm;
+
+  &[class*="dp-icon__product"] {
+    background-image: url("~assets/images/icons/sprite-product.svg");
+  }
+
+  &[class*="dp-icon__brand"] {
+    background-image: url("~assets/images/icons/sprite-brand.svg");
+  }
+
+  &[class*="dp-icon__country"] {
+    background-image: url("~assets/images/icons/sprite-country.svg");
+  }
+
+  @include onlyTablet {
+    @include icon-size-md;
+  }
+
+  @include md {
+    @include icon-size-lg;
+  }
+
+  &--sm-only {
+    @include icon-size-sm;
+  }
+
+  &--md-only {
+    @include icon-size-md;
+  }
+
+  &--lg-only {
+    @include icon-size-lg;
+  }
+
+  &--sm-md {
+    @include icon-size-sm;
+
+    @include onlyTablet {
+      @include icon-size-md;
+    }
+
+    @include md {
+      @include icon-size-md;
+    }
+  }
+
+  &--sm-lg {
+    @include icon-size-sm;
+
+    @include onlyTablet {
+      @include icon-size-sm;
+    }
+
+    @include md {
+      @include icon-size-lg;
+    }
+  }
+
+  &--md-lg {
+    @include icon-size-md;
+
+    @include onlyTablet {
+      @include icon-size-md;
+    }
+
+    @include md {
+      @include icon-size-lg;
+    }
+  }
+
+  &__brand {
+    &--compare {
+      background-position: 11.1% 0;
+    }
+    &--discount {
+      background-position: 22.2% 0;
+    }
+    &--document {
+      background-position: 44.4% 0;
+    }
+    &--promotion {
+      background-position: 55.5% 0;
+    }
+    &--reward {
+      background-position: 0% 0;
+    }
+    &--unbiased {
+      background-position: 33.3% 0;
+    }
+  }
+
+  &__product {
+    &--car-insurance {
+      background-position: 55.5% 0;
+    }
+    &--credit-card {
+      background-position: 44.4% 0;
+    }
+    &--fixed-deposit {
+      background-position: 11.1% 0;
+    }
+    &--health-insurance {
+      background-position: 99.9% 0;
+    }
+    &--home-insurance {
+      background-position: 0% 0;
+    }
+    &--home-loan {
+      background-position: 66.6% 0;
+    }
+    &--life-insurance {
+      background-position: 88.8% 0;
+    }
+    &--personal-loan {
+      background-position: 77.7% 0;
+    }
+    &--savings-account {
+      background-position: 22.2% 0;
+    }
+    &--travel-insurance {
+      background-position: 33.3% 0;
+    }
+  }
+
+  &__country {
+    border-radius: $border-radius-base;
+    width: $width-icon-country;
+    height: $height-icon-country;
+    background-size: auto;
+
+    &--hk {
+      background-position: 0 0;
+    }
+    &--id {
+      background-position: -24px 0;
+    }
+    &--my {
+      background-position: -48px 0;
+    }
+    &--ph {
+      background-position: -72px 0;
+    }
+    &--sg {
+      background-position: -96px 0;
+    }
+    &--th {
+      background-position: -120px 0;
+    }
+    &--vn {
+      background-position: -144px 0;
+    }
+  }
+}

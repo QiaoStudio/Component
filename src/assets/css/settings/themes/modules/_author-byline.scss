@@ -1,0 +1,25 @@
+/**
+  * Article Header
+  */
+
+/**
+  * Themes
+  */
+
+$themes-author-byline: (
+  article: (
+    display-wrap: inline-block,
+    content-author-wrap: "|",
+    padding-left-author-wrap: $spacing-4,
+    font-weight-author-wrap: 700,
+    color-author-wrap: $color-text-gray-5,
+    text-decoration-author-wrap: none,
+    cursor-author-wrap: pointer,
+    color-hover-author-wrap: $color-text-green-2,
+    font-size-span-sm: $font-size-14,
+    line-height-span-sm: 19px,
+    display-span-wrap: block,
+    text-align-span-wrap: left,
+    display-after-author-wrap: none,
+  )
+);

@@ -1,0 +1,172 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/tabs";
+
+.dp-tabs {
+  display: flex;
+  flex-direction: column;
+  &--underline {
+    @extend %tabs-underline-style;
+  }
+  &.dp-tabs--without-header {
+    .dp-tabs__header {
+      display: none;
+    }
+  }
+  .dp-tabs__header {
+    ul {
+      align-items: flex-end;
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      justify-content: flex-start;
+
+      li {
+        display: block;
+        padding: $padding-tab-label;
+        outline: none;
+        color: $color-tab-text;
+        font-family: $font-family-primary;
+        font-size: $font-size-14;
+        line-height: $line-height-tab-label;
+        cursor: pointer;
+        background-color: $color-tab-label-background;
+        z-index: 0;
+        margin-right: 4px;
+        border-radius: $border-radius-base $border-radius-base 0 0;
+
+        &.active {
+          font-size: $font-size-16;
+          padding: $padding-tab-label-active;
+          box-shadow: $box-shadow-tab;
+          background-color: $color-tab-label-background-active;
+          line-height: $line-height-tab-label-active;
+          z-index: 1;
+          position: relative;
+
+          // Shodaw cover
+          :before {
+            content: "";
+            position: absolute;
+            height: 9px;
+            bottom: -9px;
+            width: 100%;
+            left: 0;
+            background-color: $color-tab-content-background;
+          }
+          :after {
+            content: "";
+            position: absolute;
+            height: 6px;
+            width: 115%;
+            bottom: -6px;
+            left: -5px;
+            background-color: $color-tab-content-background;
+          }
+          &:first-child :after {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  .dp-tabs__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px;
+    .tab-item {
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+    box-shadow: $box-shadow-tab;
+    background-color: $color-tab-content-background;
+    border-radius: 0 $border-radius-base $border-radius-base $border-radius-base;
+  }
+  @include themify($themes) {
+    .dp-tabs__header {
+      ul li {
+        color: themed("color-tab-text");
+        background-color: themed("color-tab-label-background");
+        &.active {
+          color: themed("color-tab-text");
+          background-color: themed("color-tab-label-background-active");
+          :before {
+            background-color: themed("color-tab-content-background");
+          }
+          :after {
+            background-color: themed("color-tab-content-background");
+          }
+        }
+      }
+    }
+    .dp-tabs__content {
+      color: themed("color-tab-text");
+      background-color: themed("color-tab-content-background");
+    }
+  }
+}
+
+/**
+  * tabs abother style
+  */
+%tabs-underline-style {
+  .dp-tabs__header {
+    padding-left: 22px;
+    padding-right: 22px;
+    text-align: center;
+    border-bottom: 1px solid $color-border-gray-3;
+    background-color: $color-background-white-1;
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        padding: 8px 16px 11px 16px;
+        color: $color-text-black-2;
+        font-family: $font-family-primary;
+        font-size: $font-size-16;
+        font-weight: 700;
+        line-height: px-to-rate(19px, 16px);
+        appearance: none;
+        cursor: pointer;
+        &.active {
+          padding-bottom: 8px;
+          color: $color-text-green-1;
+          border-bottom: 3px solid $color-border-green-1;
+        }
+        &:not(.active):after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          background-color: $color-background-green-1;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        &:not(.active):hover:after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+    @include xs {
+      position: sticky;
+      z-index: $sticky-z-index;
+      top: 0;
+      ul {
+        li {
+          font-size: $font-size-12;
+          line-height: px-to-rate(15px, 12px);
+        }
+      }
+    }
+  }
+  .dp-tabs__content {
+    margin-top: 21px;
+  }
+}

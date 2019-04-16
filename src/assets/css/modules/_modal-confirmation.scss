@@ -1,0 +1,104 @@
+/**
+  * modal confirmation style
+  */
+@import "~assets/css/elements/modal";
+@import "~assets/css/settings/themes/elements/modal-confirmation";
+
+.dp-modal {
+  &.dp-modal__confirmation {
+
+    .dp-modal__close {
+      display: none;
+    }
+    .dp-modal__backdrop {
+      z-index: $zindex-modal;
+    }
+    .dp-modal__wrap {
+      z-index: ($zindex-modal + 1);
+    }
+    .dp-modal__dialog {
+      max-width: 326px;
+      margin: 24px;
+    }
+    .dp-modal__content {
+      max-width: 326px;
+      padding: 24px;
+      color: $color-modal-confirmation-text;
+      text-align: left;
+      // must use !important to override style from dp-modal
+      border-radius: $border-radius-small !important;
+      box-shadow: 0 2px 8px $color-modal-confirmation-boxshadow-color;
+    }
+    .dp-modal__header {
+      padding-bottom: 16px;
+      font-size: $font-size-20;
+      font-weight: 700;
+      font-family: $font-family-primary;
+      border-bottom: solid 1px $color-modal-confirmation-head-border;
+      line-height: 24px;
+      i {
+        float: left;
+        margin-right: 20px;
+        margin-top: -3px;
+        font-size: $font-size-30;
+        &.fa-warning {
+          transform: scaleX(1) scaleY(0.85);
+        }
+      }
+    }
+    .dp-modal__body {
+      margin-top: 16px;
+      font-size: $font-size-16;
+      font-family: $font-family-secondary;
+      line-height: 22px;
+    }
+    .dp-modal__footer {
+      padding-top: 24px;
+      border: none;
+      text-align: center;
+      box-shadow: none;
+      .dp-button {
+        width: calc(50% - 8px);
+        padding-left: 5px;
+        padding-right: 5px;
+        +.dp-button {
+          margin-left: 12px;
+        }
+      }
+    }
+
+    @include xs {
+      .dp-modal__confirmation-footer {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .dp-button {
+          margin: 0;
+          width: 100%;
+          &:first-child {
+            margin-top: 16px;
+          }
+          +.dp-button {
+            margin-top: 0;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    &--no-title {
+      .dp-modal__header {
+        display: none;
+      }
+    }
+    @include themify($themes) {
+      .dp-modal__content {
+        color: themed("color-modal-confirmation-text");
+        box-shadow: 0 2px 8px themed("color-modal-confirmation-boxshadow-color");
+      }
+      .dp-modal__header {
+        border-bottom-color: themed("color-modal-confirmation-head-border");
+      }
+    }
+  }
+}

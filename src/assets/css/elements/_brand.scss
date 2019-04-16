@@ -1,0 +1,150 @@
+/**
+  * Brand Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/brand";
+
+/**
+  * Default Brand style
+  */
+
+.dp-brand {
+  width: $width-svg-logo-no-tagline-mobile;
+  height: $height-svg-logo-no-tagline-mobile;
+
+  @include md {
+    width: $width-svg-logo;
+    height: $height-svg-logo;
+
+    @include themify($themes-dp-brand) {
+      height: themed("height-svg-logo");
+    }
+  }
+
+  svg,
+  image {
+    display: block;
+    transform-origin: left 0 0;
+
+    .hide-on-fallback {
+      display: block;
+      position: absolute;
+      left: -100%;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+
+  /**
+    * Brand type - Blog
+    */
+
+  &--blog {
+    width: $width-svg-logo-with-blog-mobile;
+
+    @include md {
+      width: $width-svg-logo;
+    }
+
+    .dp-brand__logo {
+
+      svg,
+      image {
+        width: $width-svg-logo-with-blog-desktop;
+        transform-origin: left 0 0;
+
+        @include md {
+          width: $width-svg-logo;
+        }
+      }
+    }
+
+    #dp-brand__blog {
+      opacity: 1;
+      width: $width-svg-blog;
+      height: $height-svg-blog;
+      fill: $color-background-black-1;
+      transform: translate(-14px, -50%) scale(1.22325, 1.22333);
+      transition: all 200ms ease;
+      transition-delay: 600ms;
+      transition-property: transform, opacity, width, height;
+
+      @include themify($themes-dp-brand) {
+        fill: themed("fill-svg-blog");
+      }
+
+      @include md {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        transition: none;
+        transition-delay: 0ms;
+      }
+    }
+  }
+
+  #dp-brand__go {
+    fill: $color-background-green-1;
+  }
+
+  #dp-brand__bear {
+    fill: $color-background-black-1;
+
+    @include themify($themes-dp-brand) {
+      fill: themed("fill-svg-bear");
+    }
+  }
+
+  #dp-brand__text {
+    fill: $color-text-gray-5;
+
+    @include themify($themes-dp-brand) {
+      fill: themed("fill-svg-text");
+    }
+  }
+
+  &__logo {
+
+    svg,
+    image {
+      width: $width-svg-logo;
+      height: $height-svg-logo-no-tagline-desktop;
+      transform: scale(0.776754604, 0.77667304); // 94x28
+
+      @include md {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__tagline {
+    margin-top: 4px;
+    opacity: 0;
+    width: $width-svg-logo;
+    height: $height-svg-tagline;
+    overflow: hidden;
+    transition: none;
+    transition-delay: 0ms;
+
+    @include md {
+      opacity: 1;
+      transition: all 200ms ease;
+      transition-delay: 600ms;
+      transition-property: opacity;
+
+      @include themify($themes-dp-brand) {
+        height: themed("height-svg-tagline");
+      }
+
+      image {
+        width: $width-svg-logo;
+        height: $height-svg-tagline;
+
+        @include themify($themes-dp-brand) {
+          height: themed("height-svg-tagline");
+        }
+      }
+    }
+  }
+}

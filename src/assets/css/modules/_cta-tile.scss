@@ -1,0 +1,92 @@
+/**
+* Blog category tile module
+*/
+@import "~assets/css/settings/style";
+@import "~assets/css/utilities/box";
+@import "~assets/css/utilities/text";
+
+.dp-cta-tile {
+  @extend .dp-tile;
+  &:hover:not(.dp-tile--readonly) {
+    .dp-cta-tile__text-container__title {
+      color: $color-text-green-2;
+    }
+    cursor: pointer;
+  }
+  text-align: left;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  @include xs {
+    padding: 20px;
+  }
+  @include onlyTablet {
+    padding: 40px;
+  }
+  @include md {
+    padding: 40px;
+  }
+  &__icon-container {
+    &--desktop {
+      width: 80px;
+      height: 80px;
+      margin-left: 40px;
+      align-self: center;
+      @include xs {
+        display: none;
+      }
+    }
+    &--mobile {
+      width: 60px;
+      height: 60px;
+      margin-left: 20px;
+      align-self: center;
+      @include md {
+        display: none;
+      }
+      @include onlyTablet {
+        display: none;
+      }
+    }
+  }
+  &__text-container {
+    width: 100%;
+    &__title {
+      display: block;
+      color: $color-text-green-1;
+      font-family: $font-family-primary;
+      font-weight: 500;
+      @include xs {
+        font-size: $font-size-20;
+        i {
+          font-size: $font-size-14;
+          vertical-align: middle;
+        }
+      }
+      @include onlyTablet {
+        font-size: $font-size-30;
+        i {
+          font-size: $font-size-19;
+          vertical-align: middle;
+        }
+      }
+      @include md {
+        font-size: $font-size-30;
+        i {
+          font-size: $font-size-19;
+          vertical-align: middle;
+        }
+      }
+    }
+    &__caption {
+      display: block;
+      margin-top: 12px;
+      &__text {
+        width: 100%;
+      }
+      @include xs {
+        display: flex;
+      }
+    }
+  }
+}

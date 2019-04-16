@@ -1,0 +1,20 @@
+@import "../../../settings/style";
+/**
+  * themes
+  */
+$themes-dp-travel-card: (
+  th: (
+    line-height-compare-button: 23px,
+    line-height-button: 27px,
+    padding-compare-button: 4px 16px,
+    padding-compare-button-last-child: 7px 20px 6px 20px,
+    padding-top-btn-text: 12px,
+    padding-bottom-btn-text: 12px,
+    line-height-discount: 16px,
+    padding-top-discount: 4px,
+    padding-bottom-discount: 3px,
+    line-height-sponsored: 17px,
+    padding-top-sponsored: 3px,
+    padding-bottom-sponsored: 3px
+  )
+);

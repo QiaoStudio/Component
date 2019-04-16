@@ -1,0 +1,394 @@
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+/**
+  * For consistent typography throughout the application,
+  * we created text helper classes for headings and body text
+  */
+
+@import "~assets/css/settings/themes/utilities/text";
+
+/**
+  * Text Alignment
+  */
+
+.dp-text-align-center {
+  text-align: center;
+}
+
+.dp-text-align-left {
+  text-align: left;
+}
+
+.dp-text-align-right {
+  text-align: right;
+}
+
+/**
+  * Text Link
+  */
+
+.dp-link {
+  font-family: $font-family-secondary;
+  font-size: $font-size-14;
+  font-weight: 700;
+  text-decoration: none;
+  color: $color-text-green-1;
+  line-height: 17px;
+  cursor: pointer;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-secondary");
+    font-size: themed("font-size-14");
+  }
+
+  &:link {
+    color: $color-text-green-1;
+  }
+
+  &:visited {
+    color: $color-text-green-1;
+  }
+
+  &:hover {
+    color: $color-text-green-2;
+  }
+
+  &:active {
+    color: $color-text-green-1;
+  }
+
+  &--author-profile {
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+    }
+  }
+
+  &--blog-content {
+    font-size: $font-size-18;
+    line-height: 28px;
+
+    @include themify($themes-fonts) {
+      font-size: themed("font-size-18");
+    }
+
+    @include xs {
+      font-size: $font-size-16;
+
+      @include themify($themes-fonts) {
+        font-size: themed("font-size-16");
+      }
+    }
+  }
+}
+
+/**
+  * Heading
+  */
+
+@for $i from 1 through 6 {
+  $headingFontSize: "";
+  $headingFontSizeDesktop: "";
+  $headingHighlight: "";
+  $headingHighlightTheme: "bg-heading-h#{$i}-highlight";
+  $headingHighlightLg: "";
+  $headingHighlightLgTheme: "bg-heading-h#{$i}-highlight-lg";
+
+  h#{$i}.dp-title {
+
+    @if ($i == 1) {
+      margin-top: 22px;
+      $headingFontSize: "font-size-32";
+      $headingFontSizeDesktop: "font-size-40";
+      $headingHighlight: $bg-heading-h1-highlight;
+      $headingHighlightLg: $bg-heading-h1-highlight-lg;
+
+      @include themify($themes-text) {
+
+        @include article-heading(
+          themed("color-h1-article"),
+          themed("margin-top-h1-article"),
+          themed("margin-bottom-h1-article"),
+          themed("font-size-h1-article"),
+          themed("line-height-h1-article"),
+          themed("margin-top-h1-article-sm"),
+          themed("margin-bottom-h1-article-sm"),
+          themed("font-size-h1-article-sm"),
+          themed("line-height-h1-article-sm"),
+          themed("margin-top-h1-article-lg"),
+          themed("margin-bottom-h1-article-lg"),
+          themed("font-size-h1-article-lg"),
+          themed("line-height-h1-article-lg")
+        );
+      }
+    }
+
+    @if ($i == 2) {
+      margin-top: 22px;
+      $headingFontSize: "font-size-24";
+      $headingFontSizeDesktop: "font-size-32";
+      $headingHighlight: $bg-heading-h2-highlight;
+      $headingHighlightLg: $bg-heading-h2-highlight-lg;
+
+      @include themify($themes-text) {
+
+        @include article-heading(
+          themed("color-h2-article"),
+          themed("margin-top-h2-article"),
+          themed("margin-bottom-h2-article"),
+          themed("font-size-h2-article"),
+          themed("line-height-h2-article"),
+          themed("margin-top-h2-article-sm"),
+          themed("margin-bottom-h2-article-sm"),
+          themed("font-size-h2-article-sm"),
+          themed("line-height-h2-article-sm")
+        );
+
+        @include blog-heading(
+          themed("color-h2-blog"),
+          themed("font-size-h2-blog"),
+          themed("line-height-h2-blog"),
+          themed("font-weight-h2-blog"),
+          themed("margin-top-h2-blog"),
+          themed("margin-bottom-h2-blog"),
+          themed("font-size-h2-blog-mobile"),
+          themed("line-height-h2-blog-mobile"),
+          themed("margin-top-h2-blog-mobile"),
+          themed("margin-bottom-h2-blog-mobile")
+        );
+
+        &--sub {
+          margin-top: themed("margin-top-h2-sub-article");
+          margin-bottom: themed("margin-bottom-h2-sub-article");
+          font-size: themed("font-size-h2-sub-article");
+          line-height: themed("line-height-h2-sub-article");
+          color: themed("color-h2-sub-article");
+          text-transform: uppercase;
+
+          @include article-heading(
+            themed("color-h2-sub-article"),
+            themed("margin-top-h2-sub-article"),
+            themed("margin-bottom-h2-sub-article"),
+            themed("font-size-h2-sub-article"),
+            themed("line-height-h2-sub-article"),
+            themed("margin-top-h2-sub-article-sm"),
+            themed("margin-bottom-h2-sub-article-sm"),
+            themed("font-size-h2-sub-article-sm"),
+            themed("line-height-h2-sub-article-sm")
+          );
+        }
+      }
+    }
+
+    @if ($i == 3) {
+      margin-top: 22px;
+      $headingFontSize: "font-size-20";
+      $headingFontSizeDesktop: "font-size-24";
+      $headingHighlight: $bg-heading-h3-highlight;
+      $headingHighlightLg: $bg-heading-h3-highlight-lg;
+
+      @include themify($themes-text) {
+
+        @include blog-heading(
+          themed("color-h3-blog"),
+          themed("font-size-h3-blog"),
+          themed("line-height-h3-blog"),
+          themed("font-weight-h3-blog"),
+          themed("margin-top-h3-blog"),
+          themed("margin-bottom-h3-blog"),
+          themed("font-size-h3-blog-mobile"),
+          themed("line-height-h3-blog-mobile"),
+          themed("margin-top-h3-blog-mobile"),
+          themed("margin-bottom-h3-blog-mobile")
+        );
+      }
+    }
+
+    @if ($i == 4) {
+      margin-top: 11px;
+      $headingFontSize: "font-size-16";
+      $headingFontSizeDesktop: "font-size-20";
+      $headingHighlight: $bg-heading-h4-highlight;
+      $headingHighlightLg: $bg-heading-h4-highlight-lg;
+
+      @include themify($themes-text) {
+
+        @include blog-heading(
+          themed("color-h4-blog"),
+          themed("font-size-h4-blog"),
+          themed("line-height-h4-blog"),
+          themed("font-weight-h4-blog"),
+          themed("margin-top-h4-blog"),
+          themed("margin-bottom-h4-blog"),
+          themed("font-size-h4-blog-mobile"),
+          themed("line-height-h4-blog-mobile"),
+          themed("margin-top-h4-blog-mobile"),
+          themed("margin-bottom-h4-blog-mobile")
+        );
+      }
+    }
+
+    @if ($i == 5) {
+      margin-top: 11px;
+      $headingFontSize: "font-size-16";
+      $headingHighlightTheme: "";
+      $headingHighlightLgTheme: "";
+
+      @include themify($themes-text) {
+
+        @include blog-heading (
+          themed("color-h5-blog"),
+          themed("font-size-h5-blog"),
+          themed("line-height-h5-blog"),
+          themed("font-weight-h5-blog"),
+          themed("margin-top-h5-blog"),
+          themed("margin-bottom-h5-blog"),
+          themed("font-size-h5-blog-mobile"),
+          themed("line-height-h5-blog-mobile"),
+          themed("margin-top-h5-blog-mobile"),
+          themed("margin-bottom-h5-blog-mobile")
+        );
+      }
+    }
+
+    @if ($i == 6) {
+      margin-top: 11px;
+      $headingFontSize: "font-size-12";
+      $headingHighlightTheme: "";
+      $headingHighlightLgTheme: "";
+
+      @include themify($themes-text) {
+
+        @include blog-heading (
+          themed("color-h6-blog"),
+          themed("font-size-h6-blog"),
+          themed("line-height-h6-blog"),
+          themed("font-weight-h6-blog"),
+          themed("margin-top-h6-blog"),
+          themed("margin-bottom-h6-blog"),
+          themed("font-size-h6-blog-mobile"),
+          themed("line-height-h6-blog-mobile"),
+          themed("margin-top-h6-blog-mobile"),
+          themed("margin-bottom-h6-blog-mobile")
+        );
+      }
+    }
+
+    margin-bottom: 11px;
+    @include heading-title (
+      $headingFontSize,
+      $headingFontSizeDesktop,
+      $headingHighlight,
+      $headingHighlightTheme,
+      $headingHighlightLg,
+      $headingHighlightLgTheme
+    );
+  }
+}
+
+/**
+  * Heading Highlight
+  */
+
+.dp-title--highlight {
+  position: relative;
+  display: inline;
+  padding-left: 0;
+  padding-right: 3px;
+}
+
+/**
+  * Subheading
+  */
+
+.dp-subtitle {
+  font-family: $font-family-secondary;
+  font-weight: 600;
+  text-align: left;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-secondary");
+  }
+
+  &--light {
+    color: $color-heading-light;
+
+    @include themify($themes-text) {
+      color: themed("color-heading-light");
+    }
+  }
+
+  &--lead {
+    font-weight: 400;
+    color: $color-heading-lead;
+
+    @include themify($themes-text) {
+      color: themed("color-heading-lead");
+    }
+  }
+}
+
+/**
+  * Paragraph and Span
+  */
+
+p,
+span {
+
+  &.dp-p {
+
+    &--text {
+      @include themify($themes-text) {
+        @include blog-paragraph-and-span (
+          themed("font-size-text-paragraph"),
+          themed("line-height-text-paragraph"),
+          themed("color-text-paragraph"),
+          themed("font-size-text-paragraph-mobile"),
+          themed("line-height-text-paragraph-mobile")
+        );
+      }
+    }
+
+    &--sub {
+      @include themify($themes-text) {
+        @include blog-paragraph-and-span (
+          themed("font-size-sub-paragraph"),
+          themed("line-height-sub-paragraph"),
+          themed("color-sub-paragraph"),
+          themed("font-size-sub-paragraph-mobile"),
+          themed("line-height-sub-paragraph-mobile")
+        );
+      }
+    }
+
+    &--sm {
+      @include themify($themes-text) {
+        @include blog-paragraph-and-span (
+          themed("font-size-paragraph-sm"),
+          themed("line-height-paragraph-sm"),
+          themed("color-paragraph-sm"),
+          themed("font-size-paragraph-sm-mobile"),
+          themed("line-height-paragraph-sm-mobile")
+        );
+      }
+    }
+  }
+
+  &.dp-span {
+
+    &--sm {
+      @include themify($themes-text) {
+        display: themed("display-span-sm");
+        font-family: themed("font-family-span-sm");
+        font-size: map-get($font-sizes, themed("font-size-span-sm"));
+        line-height: themed("line-height-span-sm");
+        text-align: themed("text-align-span-sm");
+        color: themed("color-span-sm");
+      }
+    }
+  }
+}

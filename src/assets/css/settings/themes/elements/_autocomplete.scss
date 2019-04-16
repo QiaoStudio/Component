@@ -1,0 +1,27 @@
+/**
+* autocomplete
+*/
+$color-dp-field-fixed: $color-text-white-1;
+$color-dp-field-autocomplete-head-bg: $color-background-white-1;
+$color-dp-multiselect-tag-bg: $color-background-gray-2;
+$color-dp-multiselect-tag-highlight-bg: rgba($color-background-green-1, 0.3);
+$color-dp-multiselect-tag-close: $color-text-gray-5;
+$color-dp-multiselect-tag-highlight-text: $color-text-green-1;
+$color-checkbox-label-border: $color-border-black-2;
+$color-checkbox-border-hover: $color-border-green-1;
+
+/**
+* themes
+*/
+$themes-autocomplete: (
+  dark: (
+    color-dp-field-fixed: $color-text-white-1,
+    color-dp-field-autocomplete-head-bg: $color-background-white-1,
+    color-dp-multiselect-tag-bg: $color-background-black-1,
+    color-dp-multiselect-tag-highlight-bg: rgba($color-background-green-1, 0.3),
+    color-dp-multiselect-tag-close: $color-text-gray-5,
+    color-dp-multiselect-tag-highlight-text: $color-background-black-1,
+    color-checkbox-label-border: $color-border-black-2,
+    color-checkbox-border-hover: $color-border-gray-5,
+  )
+);

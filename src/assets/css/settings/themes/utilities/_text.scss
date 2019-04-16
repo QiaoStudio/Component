@@ -1,0 +1,158 @@
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+@import "~assets/css/settings/style";
+
+/**
+  *  Heading
+  */
+
+$color-heading-highlight-bg: $color-background-green-1;
+$color-heading-light: $color-text-white-1;
+$color-heading-lead: $color-text-gray-5;
+
+$bg-heading-h1-highlight: linear-gradient(transparent ($font-size-14), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h1-highlight-lg: linear-gradient(transparent ($font-size-18), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h2-highlight: linear-gradient(transparent ($font-size-12), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h2-highlight-lg: linear-gradient(transparent ($font-size-14), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h3-highlight: linear-gradient(transparent ($font-size-10), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h3-highlight-lg: linear-gradient(transparent ($font-size-12), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h4-highlight: linear-gradient(transparent ($font-size-8), rgba($color-heading-highlight-bg, 0.5) 0);
+$bg-heading-h4-highlight-lg: linear-gradient(transparent ($font-size-10), rgba($color-heading-highlight-bg, 0.5) 0);
+
+/**
+  * Themes
+  */
+
+$themes-text: (
+  dark: (
+    color-heading-highlight-bg: $color-background-gray-5,
+    color-heading-light: $color-text-white-1,
+    color-heading-lead: $color-text-gray-6,
+    bg-heading-h1-highlight: linear-gradient(transparent ($font-size-14), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h1-highlight-lg: linear-gradient(transparent ($font-size-18), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h2-highlight: linear-gradient(transparent ($font-size-12), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h2-highlight-lg: linear-gradient(transparent ($font-size-14), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h3-highlight: linear-gradient(transparent ($font-size-10), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h3-highlight-lg: linear-gradient(transparent ($font-size-12), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h4-highlight: linear-gradient(transparent ($font-size-8), rgba($color-background-gray-5, 0.5) 0),
+    bg-heading-h4-highlight-lg: linear-gradient(transparent ($font-size-10), rgba($color-background-gray-5, 0.5) 0)
+  ),
+  article: (
+    // H1
+    color-h1-article: $color-text-black-2,
+    margin-top-h1-article: $spacing-8,
+    margin-bottom-h1-article: $spacing-24,
+    font-size-h1-article: "font-size-24",
+    line-height-h1-article: 28px,
+    margin-top-h1-article-sm: $spacing-16,
+    margin-bottom-h1-article-sm: $spacing-24,
+    font-size-h1-article-sm: "font-size-32",
+    line-height-h1-article-sm: 40px,
+    margin-top-h1-article-lg: $spacing-24,
+    margin-bottom-h1-article-lg: $spacing-32,
+    font-size-h1-article-lg: "font-size-40",
+    line-height-h1-article-lg: 46px,
+    // H2
+    color-h2-article: $color-text-black-2,
+    margin-top-h2-article: 32px,
+    margin-bottom-h2-article: 20px,
+    font-size-h2-article: "font-size-16",
+    line-height-h2-article: 19px,
+    margin-top-h2-article-sm: 40px,
+    margin-bottom-h2-article-sm: 24px,
+    font-size-h2-article-sm: "font-size-20",
+    line-height-h2-article-sm: 25px,
+    // H2 - SUB
+    color-h2-sub-article: $color-text-gray-6,
+    margin-top-h2-sub-article: 32px,
+    margin-bottom-h2-sub-article: 16px,
+    font-size-h2-sub-article: "font-size-12",
+    line-height-h2-sub-article: 15px,
+    margin-top-h2-sub-article-sm: 40px,
+    margin-bottom-h2-sub-article-sm: 24px,
+    font-size-h2-sub-article-sm: "font-size-14",
+    line-height-h2-sub-article-sm: 18px,
+    // SPAN
+    display-span-sm: block,
+    text-align-span-sm: left,
+    font-family-span-sm: $font-family-secondary,
+    font-size-span-sm: "font-size-12",
+    line-height-span-sm: 17px,
+    color-span-sm: $color-text-gray-5
+  ),
+  blog: (
+    // H2
+    color-h2-blog: $color-text-black-2,
+    font-size-h2-blog: "font-size-26",
+    line-height-h2-blog: $spacing-32,
+    font-weight-h2-blog: 500,
+    margin-top-h2-blog: $spacing-60,
+    font-size-h2-blog-mobile: "font-size-24",
+    line-height-h2-blog-mobile: 28px,
+    margin-bottom-h2-blog: $spacing-24,
+    margin-top-h2-blog-mobile: $spacing-32,
+    margin-bottom-h2-blog-mobile: $spacing-12,
+    // H3
+    color-h3-blog: $color-text-black-2,
+    font-size-h3-blog: "font-size-22",
+    line-height-h3-blog: 28px,
+    font-weight-h3-blog: 500,
+    margin-top-h3-blog: $spacing-32,
+    margin-bottom-h3-blog: $spacing-20,
+    font-size-h3-blog-mobile: "font-size-20",
+    line-height-h3-blog-mobile: 24px,
+    margin-top-h3-blog-mobile: $spacing-24,
+    margin-bottom-h3-blog-mobile: $spacing-12,
+    // H4
+    color-h4-blog: $color-text-black-2,
+    font-size-h4-blog: "font-size-18",
+    line-height-h4-blog: 22px,
+    font-weight-h4-blog: 700,
+    margin-top-h4-blog: $spacing-32,
+    margin-bottom-h4-blog: $spacing-12,
+    font-size-h4-blog-mobile: "font-size-16",
+    line-height-h4-blog-mobile: 18px,
+    margin-top-h4-blog-mobile: $spacing-24,
+    margin-bottom-h4-blog-mobile: $spacing-12,
+    // H5
+    color-h5-blog: $color-text-gray-6,
+    font-size-h5-blog: "font-size-16",
+    line-height-h5-blog: 18px,
+    font-weight-h5-blog: 700,
+    margin-top-h5-blog: $spacing-24,
+    margin-bottom-h5-blog: $spacing-12,
+    font-size-h5-blog-mobile: "",
+    line-height-h5-blog-mobile: "",
+    margin-top-h5-blog-mobile: "",
+    margin-bottom-h5-blog-mobile: "",
+    // H6
+    color-h6-blog: $color-text-gray-5,
+    font-size-h6-blog: "font-size-12",
+    line-height-h6-blog: 14px,
+    font-weight-h6-blog: 700,
+    margin-top-h6-blog: $spacing-24,
+    margin-bottom-h6-blog: $spacing-12,
+    font-size-h6-blog-mobile: "",
+    line-height-h6-blog-mobile: "",
+    margin-top-h6-blog-mobile: "",
+    margin-bottom-h6-blog-mobile: "",
+    // PARAGRAPH
+    font-size-text-paragraph: "font-size-18",
+    line-height-text-paragraph: 28px,
+    color-text-paragraph: $color-text-black-2,
+    font-size-text-paragraph-mobile: "font-size-16",
+    line-height-text-paragraph-mobile: 28px,
+    font-size-sub-paragraph: "font-size-16",
+    line-height-sub-paragraph: 26px,
+    color-sub-paragraph: $color-text-gray-6,
+    font-size-sub-paragraph-mobile: "font-size-14",
+    line-height-sub-paragraph-mobile: 24px,
+    font-size-paragraph-sm: "font-size-14",
+    line-height-paragraph-sm: 22px,
+    color-paragraph-sm: $color-text-gray-5,
+    font-size-paragraph-sm-mobile: "font-size-14",
+    line-height-paragraph-sm-mobile: 22px
+  )
+);

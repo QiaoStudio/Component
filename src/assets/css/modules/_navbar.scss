@@ -1,0 +1,390 @@
+/**
+  * Navbar Theme settings
+  */
+
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/modules/navbar";
+
+/**
+  * Default Navbar style
+  */
+
+.dp-navbar {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &--fixed {
+    position: fixed;
+  }
+
+  @include themify($themes-dp-navbar) {
+    background-color: themed("background-color-default-navbar");
+  }
+
+  &__menu {
+    position: relative;
+    display: flex;
+    height: $height-navbar-mobile;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: $padding-x-navbar;
+    padding-right: $padding-x-navbar;
+    z-index: 0;
+    transition: $transition-navbar-menu;
+    transition-delay: $transition-delay-navbar-menu;
+
+    .dp-brand {
+
+      #dp-brand__bear:not(.dp-theme-null),
+      #dp-brand__text:not(.dp-theme-null) {
+        transition: $transition-navbar-brand;
+      }
+    }
+
+    /**
+      * Active menu
+      */
+
+    &--active {
+      box-shadow: $box-shadow-navbar;
+      background-color: $color-background-white-1;
+      transition-delay: $transition-delay-navbar-menu-active;
+
+      @include themify($themes-dp-navbar) {
+
+        .dp-brand {
+
+          #dp-brand__bear:not(.dp-theme-null) {
+            fill: themed("fill-navbar-brand-bear");
+          }
+
+          #dp-brand__text:not(.dp-theme-null) {
+            fill: themed("fill-navbar-brand-text");
+          }
+        }
+
+        .dp-navbar__item {
+
+          span:not(.dp-theme-null) {
+            color: themed("color-active-menu-navbar-item-span");
+
+            i {
+              color: themed("color-active-menu-navbar-item-span");
+            }
+          }
+
+          &--active,
+          &:hover {
+            @extend %dp-navbar-item-active;
+          }
+        }
+
+        .dp-navbar__right {
+
+          .dp-button {
+
+            &--ghost-primary {
+              border-color: themed("border-color-navbar-right-ghost-primary-active");
+              color: themed("color-navbar-right-ghost-primary-active");
+              background-color: themed("background-color-navbar-right-ghost-primary");
+              &:hover,
+              &:focus {
+                color: themed("color-navbar-right-ghost-primary-hover");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include md {
+      height: auto;
+    }
+  }
+
+  &__bg-wrapper {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    will-change: opacity;
+    transition: $transition-navbar-bg-wrapper;
+    transition-delay: 0s;
+
+    &--show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__bg {
+    padding: $spacing-40 60px;
+    width: 400px;
+    height: 200px;
+    background-color: $color-background-white-1;
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+    overflow: hidden;
+    box-shadow: $box-shadow-navbar;
+    transform-origin: 0 0;
+    will-change: transform;
+    transition-delay: $transition-delay-navbar;
+
+    &--animate {
+      transition: $transition-navbar-bg;
+      transition-delay: 0s;
+    }
+  }
+
+  &__toggle {
+    display: block;
+    margin-top: $margin-y-navbar-hamburger;
+    margin-bottom: $margin-y-navbar-hamburger;
+    text-decoration: none;
+
+    span {
+      display: block;
+      margin-top: $height-navbar-hamburger;
+      width: $width-navbar-hamburger;
+      height: $height-navbar-hamburger;
+      border-radius: $border-radius-small;
+      background-color: $color-background-green-1;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__items {
+
+    /**
+      * Possible items inside navbar
+      */
+
+    .dp-button {
+      vertical-align: initial;
+
+      &.dp-button--text {
+        padding-left: $x-navbar-item;
+        padding-right: $x-navbar-item;
+        padding-top: $y-navbar-item;
+        padding-bottom: $y-navbar-item;
+        font-size: $font-size-14;
+        border-radius: 0;
+        color: $color-text-black-2;
+        line-height: normal;
+        font-weight: 400;
+        text-transform: none;
+        transition: $transition-navbar-text-color;
+
+        @include themify($themes-fonts) {
+          font-size: themed("font-size-14");
+        }
+
+        &:hover {
+          color: $color-text-green-1;
+        }
+      }
+    }
+
+    &--desktop {
+      display: none;
+      // max-width: $max-width-navbar-desktop;
+      max-height: $max-height-navbar-desktop;
+      text-align: right;
+      overflow: hidden;
+
+      &>nav {
+
+        li {
+          display: inline-block;
+        }
+      }
+    }
+
+    &--mobile {
+      display: block;
+    }
+
+    @include md {
+
+      &--desktop {
+        display: flex;
+      }
+
+      &--mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    padding-left: $x-navbar-item;
+    padding-right: $x-navbar-item;
+    padding-top: $y-navbar-item;
+    padding-bottom: $y-navbar-item;
+    flex: 0 0 auto;
+    text-decoration: none;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+    }
+
+    span {
+      font-family: $font-family-primary;
+      font-size: $font-size-14;
+      color: $color-text-black-2;
+      line-height: $line-height-navbar-item;
+      transition: $transition-navbar-text-color;
+
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-primary");
+        font-size: themed("font-size-14");
+      }
+
+      @include themify($themes-dp-navbar) {
+        color: themed("color-navbar-item-default");
+      }
+
+      i {
+        color: $color-text-black-2;
+        transition: $transition-navbar-text-icon;
+
+        @include themify($themes-dp-navbar) {
+          font-size: themed("font-size-caret");
+          color: themed("color-navbar-item-default");
+        }
+      }
+    }
+
+    &--active,
+    &:hover {
+      @extend %dp-navbar-item-active;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    transform: translateX(0);
+    transition: $transition-navbar-content;
+  }
+
+  &__sub {
+    position: absolute;
+    padding: $spacing-40 60px;
+    z-index: 0;
+    transform: translateX(0);
+    will-change: opacity, transform;
+
+    .dp-megamenu {
+      display: flex;
+    }
+  }
+
+  &__right {
+    align-self: center;
+
+    .dp-button {
+      margin-left: $margin-left-navbar-right;
+
+      &--ghost-primary {
+        @include themify($themes-dp-navbar) {
+          border-color: themed("color-navbar-right-ghost-primary-hover");
+          background-color: themed("background-color-navbar-right-ghost-primary");
+          &:hover,
+          &:focus {
+            border-color: themed("background-color-navbar-right-ghost-primary-hover");
+            background-color: themed("background-color-navbar-right-ghost-primary-hover");
+          }
+        }
+      }
+
+      &--primary {
+        @include themify($themes-dp-navbar) {
+          background-color: themed("background-color-navbar-right-primary");
+          &:hover,
+          &:focus {
+            border-color: themed("background-color-navbar-right-primary-hover");
+            background-color: themed("background-color-navbar-right-primary-hover");
+          }
+        }
+      }
+    }
+  }
+
+  /**
+    * Stop transition on first item hover
+    */
+
+  &__no-transition {
+
+    .dp-navbar__bg--animate {
+      transition: transform 0s;
+    }
+
+    &+.dp-navbar__content {
+      transition: transform 0s;
+    }
+  }
+
+  /**
+    * <transition-group> transitions
+    */
+
+  .no-mode-translate-fade-enter-active,
+  .no-mode-translate-fade-leave-active {
+    transition: $transition-navbar-sub;
+  }
+
+  .no-mode-translate-fade-enter,
+  .no-mode-translate-fade-leave-active {
+    opacity: 0;
+  }
+
+  .no-mode-translate-fade-enter {
+    transform: translateX(0);
+  }
+
+  .no-mode-translate-fade-enter-active {
+    z-index: 1000;
+  }
+
+  .no-mode-translate-fade-leave,
+  .no-mode-translate-fade-leave-active,
+  .no-mode-translate-fade-leave-active-to {
+    opacity: 0;
+    transition: 0.1s;
+  }
+}
+
+/**
+  * Active state
+  */
+
+%dp-navbar-item-active {
+
+  span {
+    color: $color-text-green-1;
+
+    i {
+      color: $color-text-green-1;
+      transform: rotate(-180deg);
+    }
+
+    @include themify($themes-dp-navbar) {
+      color: themed("color-navbar-item-active");
+
+      i {
+        color: themed("color-navbar-item-active");
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`elements/Key Value with Label when all props are set then tag should show correctly 1`] = `
+<div class="dp-key-value-with-label">
+  <div class="dp-key-value-with-label--left-alignment">
+    <p class="dp-key-value-with-label__text-top">
+      You might get up to
+    </p>
+    <p class="dp-key-value-with-label__value-container">
+      200 - 300*
+    </p>
+    <p class="dp-key-value-with-label__text-bottom">You might get up to</p>
+  </div>
+</div>
+`;

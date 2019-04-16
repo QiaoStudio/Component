@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    #FLOAT
+\*------------------------------------*/
+
+/**
+  * Use a float to pull an element out of the document’s
+  * normal flow and to align it with the left or right side of the container
+  */
+
+/**
+  * Clearfix
+  */
+
+.dp-clearfix {
+  @include clearfix();
+}
+
+/**
+  * Pull Left
+  */
+
+.dp-float-left {
+  float: left !important;
+}
+
+/**
+  * Pull Right
+  */
+
+.dp-float-right {
+  float: right !important;
+}
+
+/**
+  * None
+  */
+
+.dp-float-none {
+  float: none !important;
+}

@@ -1,0 +1,178 @@
+/**
+  * Megamenu Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/megamenu";
+
+/**
+  * Default Megamenu style
+  */
+
+.dp-megamenu {
+  display: inline-block;
+  @include clearfix;
+
+  &>div {
+    margin-top: 20px;
+
+    &>span {
+      display: block;
+      border-bottom: 1px solid $color-border-gray-3;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: $padding-bottom-megamenu-title;
+      font-family: $font-family-primary;
+      font-size: $font-size-14;
+      font-weight: 700;
+      color: $color-text-gray-5;
+      text-align: left;
+      line-height: 1;
+
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-primary");
+        font-size: themed("font-size-14");
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include md {
+      float: left;
+      margin-left: 40px;
+      margin-top: 0;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $color-text-black-2;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  &__link {
+    margin-top: $margin-top-megamenu-link;
+    text-align: left;
+
+    @include md {
+      max-width: 240px;
+      width: 100%;
+    }
+
+    &--two-column {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 500px;
+      width: 100%;
+
+      .dp-megamenu__link {
+        max-width: 50%;
+
+        &:nth-child(odd) {
+          padding-right: $padding-x-megamenu-label;
+        }
+      }
+    }
+
+    a {
+      transition: color 200ms ease;
+
+      &:hover {
+        color: $color-text-green-1;
+      }
+    }
+
+    .dp-icon {
+      flex-wrap: nowrap;
+
+      &+.dp-megamenu__link-label {
+        padding-left: $padding-x-megamenu-label;
+      }
+    }
+
+    &-label {
+      display: inline-block;
+      flex: 1;
+      font-family: $font-family-primary;
+      font-size: $font-size-16;
+      font-weight: 700;
+      word-break: break-word;
+
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-primary");
+        font-size: themed("font-size-16");
+      }
+    }
+  }
+
+  &__article {
+    margin-top: $margin-top-megamenu-article;
+
+    @include md {
+      width: 340px;
+    }
+
+    a {
+
+      &:hover {
+
+        .dp-megamenu__article-title {
+          color: $color-text-green-1;
+        }
+      }
+    }
+
+    &-img {
+      display: inline-block;
+      margin-right: $margin-right-megamenu-article-img;
+      max-width: $width-megamenu-image;
+      height: $height-megamenu-image;
+      flex: 1 1 100%;
+      overflow: hidden;
+
+      img {
+        border-radius: $border-radius-megamenu-image;
+      }
+    }
+
+    &-title {
+      display: block;
+      font-family: $font-family-primary;
+      font-size: $font-size-14;
+      font-weight: 500;
+      color: $color-text-black-2;
+      transition: color 200ms ease;
+
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-primary");
+        font-size: themed("font-size-14");
+      }
+
+      &+.dp-megamenu__article-desc {
+        margin-top: 8px;
+      }
+    }
+
+    &-desc {
+      display: block;
+      font-family: $font-family-secondary;
+      font-size: $font-size-14;
+      font-weight: 400;
+      color: $color-text-gray-6;
+
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-secondary");
+        font-size: themed("font-size-14");
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+/**
+  * Author profile
+  */
+@import "~assets/css/settings/style";
+
+.dp-author-profile {
+  display: flex;
+  text-align: left;
+  .dp-theme-article {
+    h2.dp-author-profile__author {
+      &:not(.dp-theme-null) {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+  &__contentWrap {
+    flex: 1 1 auto;
+    text-align: left;
+  }
+  &__avatar {
+    flex: 0 0 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @include xs {
+      flex: 0 0 40px;
+      height: 40px;
+      margin-right: 12px;
+    }
+  }
+  &__link-button {
+    margin-top: 12px;
+    display: inline-block;
+    cursor: pointer;
+  }
+}

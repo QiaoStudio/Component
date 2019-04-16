@@ -1,0 +1,32 @@
+@import "../../../settings/style";
+/**
+  * Label
+  */
+
+$font-weight-label-th: 400;
+$color-label-text-blue: $color-text-blue-1;
+$color-label--bg-gray: $color-background-gray-1;
+$color-label--bg-text: $color-background-white-1;
+$color-label-discount--bg-green: rgba($color-background-green-1, 0.4);
+$color-label-discount--color-green: $color-text-green-2;
+$color-label-discount--bg-red: $color-background-red-3;
+$color-label-discount--color-red: $color-text-red-1;
+$color-label-discount--bg-orange: rgba($color-background-orange-1, 0.4);
+$color-label-discount--color-orange: $color-text-orange-5;
+$color-label-discount--bg-gray: rgba($color-background-gray-5, 0.4);
+$color-label-discount--color-gray: $color-text-gray-6;
+$color-label-border-blue: $color-border-blue-1;
+$padding-label-md-th: 3px;
+$padding-label-lg-th: 5px;
+
+/**
+  * Themes
+  */
+
+$themes-dp-label: (
+  th: (
+    font-weight: $font-weight-label-th,
+    padding-medium: $padding-label-md-th,
+    padding-large: $padding-label-lg-th,
+  )
+);

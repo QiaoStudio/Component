@@ -1,0 +1,17 @@
+@import "../../../settings/style";
+/**
+  * Article Header
+  */
+
+$padding-y-article-header: $spacing-32;
+$translate-y-article-header-image: $spacing-60;
+$transition-article-header: 0.25s;
+$padding-article-header-md: $padding-y-article-header 0 $spacing-60;
+$padding-article-header-lg: $padding-y-article-header 0;
+$transition-article-header-image: all 0.4s ease-in-out;
+
+/**
+  * Themes
+  */
+
+// $themes-dp-article-header: ();

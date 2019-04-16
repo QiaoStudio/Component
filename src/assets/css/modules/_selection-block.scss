@@ -1,0 +1,28 @@
+@import "~assets/css/settings/style";
+/**
+  * Default Selection Block style
+  */
+
+.dp-selection-block {
+  display: flex;
+  font-size: $font-size-14;
+  padding: 15px;
+  font-family: $font-family-primary;
+  align-items: center;
+  &--default {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &--horizontal {
+    align-items: center;
+    .dp-selection-block {
+      &__text {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 30px;
+      }
+    }
+  }
+
+}

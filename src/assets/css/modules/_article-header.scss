@@ -1,0 +1,134 @@
+/**
+  * Article Header Theme settings
+  */
+
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/modules/article-header";
+
+/**
+  * Default Article Header style
+  */
+
+.dp-article-header {
+
+  @include md {
+    display: flex;
+    align-items: center;
+    padding: $padding-article-header-md;
+
+    &>div {
+      width: 50%;
+
+      &:first-child {
+        padding-right: $spacing-24;
+      }
+
+      &:last-child {
+        padding-left: $spacing-24;
+      }
+    }
+  }
+
+  @include lg {
+    padding: $padding-article-header-lg;
+
+    &>div {
+      transform: translateY($translate-y-article-header-image);
+
+      &:first-child {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .dp-loader {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      opacity: 1;
+      visibility: visible;
+      overflow: hidden;
+      transition: $transition-article-header-image;
+
+      &.lazy-loading {
+        opacity: 0;
+        visibility: hidden;
+
+        &+.dp-loader {
+          display: block;
+        }
+      }
+    }
+
+    @include sm {
+
+      img {
+        border-radius: $border-radius-base;
+      }
+    }
+  }
+
+  .dp-breadcrumbs {
+    margin-top: $spacing-24;
+    padding-left: $spacing-24;
+    padding-right: $spacing-24;
+    transition: $transition-article-header;
+
+    @include sm {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .dp-title {
+    margin-top: $spacing-24 / 2;
+    margin-bottom: $spacing-24;
+    padding-left: $spacing-24;
+    padding-right: $spacing-24;
+    transition: $transition-article-header;
+
+    @include xs {
+      font-size: $font-size-24;
+    }
+
+    @include sm {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include onlyTablet {
+      font-size: $font-size-32;
+    }
+
+    @include md {
+      margin-top: $spacing-24;
+      margin-bottom: $padding-y-article-header;
+    }
+  }
+
+  .dp-author__byline {
+    margin-top: $spacing-24;
+    margin-bottom: $spacing-24;
+    padding-left: $spacing-24;
+    padding-right: $spacing-24;
+    transition: $transition-article-header;
+
+    @include sm {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

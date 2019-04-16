@@ -1,0 +1,27 @@
+@import "../../../settings/style";
+/**
+  *  Promotion
+  */
+
+$color-promotion-bg-gray-light: $color-background-gray-1;
+$padding-promotion: 9px 8px;
+$line-height-promotion-span: 18px;
+$padding-promotion-button: 8px;
+$font-weight-promotion-text: 600;
+
+/**
+  * Themes
+  */
+
+$themes-dp-Promotion: (
+  th: (
+    line-height-promotion-span: 23px,
+    line-height-promotion-title: 29px,
+    line-height-promotion-content-title: 26px,
+    line-height-promotion-content-item: 20px,
+    padding-promotion-button: 4px 8px,
+    font-weight-promotion-text: normal,
+    left-promotion-popover: 15px !important,
+    top-promotion-popover: -3px !important
+  )
+);

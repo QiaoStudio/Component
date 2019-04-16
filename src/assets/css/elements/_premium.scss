@@ -1,0 +1,121 @@
+/**
+* Premium Theme settings
+*/
+
+@import "~assets/css/settings/themes/elements/premium";
+
+/**
+* Default Premium style
+*/
+
+.dp-premium {
+  display: inline-block;
+
+  &__no-price {
+    color: $color-text-gray-5;
+    font-size: $font-size-16;
+    font-weight: 700;
+  }
+
+  &>div {
+    display: flex;
+
+    &>span {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      text-align: left;
+    }
+    .dp-premium__price {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    .dp-premium__other {
+      padding-left: $padding-premium-other;
+      .dp-premium__before-discount {
+        margin-left: $margin-premium-discount;
+      }
+      @include themify($themes-dp-premium) {
+        padding-left: themed("padding-premium-other");
+        .dp-premium__before-discount {
+          margin-left: themed("margin-premium-discount");
+        }
+      }
+    }
+  }
+
+  &__currency {
+    align-self: flex-start;
+    padding-right: 2px;
+    color: $color-text-black-2;
+    font-family: $font-family-primary;
+    font-size: $font-size-20;
+    font-weight: 500;
+    line-height: px-to-rate(25px, 20px);
+    margin-top: 1px;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-20");
+      line-height: themed("font-size-18");
+    }
+  }
+
+  &__value {
+    align-self: flex-end;
+    color: $color-text-black-2;
+    font-family: $font-family-primary;
+    font-size: $font-size-40;
+    font-weight: bold;
+    line-height: $line-height-value;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-40");
+    }
+
+    @include themify($themes-dp-premium) {
+      font-weight: themed("font-weight");
+      line-height: themed("line-height-value");
+    }
+  }
+
+  &__before-discount {
+    color: $color-text-red-1;
+    font-family: $font-family-primary;
+    font-size: $font-size-12;
+    font-weight: 700;
+    line-height: $line-height-discount;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-12");
+    }
+
+    @include themify($themes-dp-premium) {
+      font-weight: themed("font-weight");
+      line-height: themed("line-height-discount");
+    }
+  }
+
+  &__unit {
+    &-text,&-slash {
+      color: $color-text-gray-6;
+      font-family: $font-family-secondary;
+      font-size: $font-size-14;
+      line-height: $line-height-unit;
+    }
+    &-text {
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-primary");
+        font-size: themed("font-size-14");
+      }
+
+      @include themify($themes-dp-premium) {
+        font-weight: themed("font-weight");
+        color: themed("color-premium-unit");
+        line-height: themed("line-height-unit");
+      }
+    }
+  }
+}

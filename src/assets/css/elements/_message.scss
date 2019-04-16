@@ -1,0 +1,46 @@
+@import "~assets/css/settings/themes/elements/message";
+
+.dp-message {
+  padding: $padding-message;
+  position: relative;
+  overflow: auto;
+  display: inline-block;
+  font-size: $font-size-message;
+  font-family: $font-family-message;
+  text-align: left;
+  border-radius: 2px;
+
+  &__infoIcon {
+    font-size: $font-size-message-icon;
+    position: absolute;
+    left: $padding-message;
+    top: $padding-message;
+    i {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &__content {
+    margin-left: $padding-message + $padding-message-lg-th;
+  }
+
+  &__button {
+    margin-top: $padding-message;
+    &.dp-button--text {
+      font-size: $font-size-message-button !important;
+      float: right;
+      overflow: auto;
+      padding: 0;
+    }
+  }
+
+  &.dp-message--yellow {
+    background-color: $color-message--bg-yellow;
+    color: $color-message--text-yellow;
+  }
+  &.dp-message--green {
+    background-color: $color-message--bg-green;
+    color: $color-message--text-green;
+  }
+}

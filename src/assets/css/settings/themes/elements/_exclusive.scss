@@ -1,0 +1,16 @@
+@import "../../../settings/style";
+/**
+  * Exclusive
+  */
+
+$margin-exclusive-th: 2px;
+
+/**
+  * Themes
+  */
+
+$themes-dp-exclusive: (
+  th: (
+    margin: $margin-exclusive-th,
+  )
+);

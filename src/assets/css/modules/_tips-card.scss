@@ -1,0 +1,105 @@
+@import "~assets/css/settings/style";
+
+.dp-tips-card {
+  border: 1px solid $color-border-gray-3;
+  border-radius: 4px;
+  background-color: $color-background-white-1;
+  box-shadow: 0 2px 8px 0 rgba($color-box-shadow-black-1, 0.2);
+  transition-duration: 0s;
+  transition: transform !important;
+  &__body {
+    display: flex;
+    padding: 24px 24px 12px 0;
+  }
+
+  &__img {
+    display: flex;
+    padding: 12px 24px;
+    >img {
+      margin: auto;
+      height: 71px;
+    }
+  }
+
+  &__text {
+    text-align: left;
+    width: 100%;
+    &-title {
+      font-family: $font-family-primary;
+      color: $color-text-blue-1;
+      font-size: $font-size-12;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    &-content {
+      color: $color-text-black-2;
+      font-family: $font-family-secondary;
+      font-size: $font-size-14;
+      @include md {
+        font-size: $font-size-16;
+      }
+      @include onlyTablet {
+        font-size: $font-size-16;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 11px 24px;
+    display: flex;
+    @include xs {
+      border-top: 1px solid $color-border-gray-2;
+    }
+    &-left {
+      margin: auto;
+      flex-grow: 1;
+      text-align: left;
+    }
+    &-right {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      .dp-button--text.dp-tips-card__button {
+        font-size: $font-size-12;
+        padding: 0;
+      }
+      .pad {
+        margin-right: 24px;
+      }
+    }
+
+    @include md {
+      padding-right: 0;
+      padding-left: 0;
+      &.tips-card-footer-mobile {
+        display: none;
+      }
+    }
+    @include onlyTablet {
+      padding-right: 0;
+      padding-left: 0;
+      &.tips-card-footer-mobile {
+        display: none;
+      }
+    }
+    @include xs {
+      &.tips-card-footer-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+.dp-tips-card__footer--dot {
+  height: 6px;
+  width: 6px;
+  background-color: $color-background-gray-3;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dp-tips-card__footer--dot.active {
+  background-color: $color-background-green-1;
+}

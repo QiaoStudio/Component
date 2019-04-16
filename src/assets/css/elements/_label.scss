@@ -1,0 +1,173 @@
+/**
+  * Label Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/label";
+
+/**
+  * Default Label style
+  */
+
+.dp-label {
+  display: inline-block;
+
+  strong {
+    font-family: $font-family-primary;
+    font-size: $font-size-10;
+    line-height: 0;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-10");
+    }
+  }
+
+  small {
+    display: inline-block;
+    border-radius: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: $font-family-secondary;
+    font-size: $font-size-10;
+    font-weight: 600;
+    color: $color-text-white-1;
+    text-transform: uppercase;
+    background-color: $color-background-green-1;
+    vertical-align: middle;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-10");
+    }
+
+    @include themify($themes-dp-label) {
+      font-weight: themed("font-weight");
+      line-height: 1;
+    }
+  }
+
+  /**
+    * Label type - Discount
+    */
+
+  &--discount {
+
+    small {
+      font-weight: 400;
+      text-transform: none;
+      color: $color-label-discount--color-green;
+      background-color: $color-label-discount--bg-green;
+    }
+
+    /**
+      * Label color
+      */
+
+    &.dp-label--red {
+      small {
+        color: $color-label-discount--color-red;
+        background-color: $color-label-discount--bg-red;
+      }
+    }
+
+    &.dp-label--orange {
+      small {
+        color: $color-label-discount--color-orange;
+        background-color: $color-label-discount--bg-orange;
+      }
+    }
+
+    &.dp-label--gray {
+      small {
+        color: $color-label-discount--color-gray;
+        background-color: $color-label-discount--bg-gray;
+      }
+    }
+  }
+
+  /**
+    * Label size
+    */
+
+  &--md {
+
+    small {
+      padding-top: 4px;
+      padding-bottom: 4px;
+
+      @include themify($themes-dp-label) {
+        padding-top: themed("padding-medium");
+        padding-bottom: themed("padding-medium");
+      }
+    }
+  }
+
+  &--lg {
+
+    small {
+      padding-top: 6px;
+      padding-bottom: 6px;
+
+      @include themify($themes-dp-label) {
+        padding-top: themed("padding-large");
+        padding-bottom: themed("padding-large");
+      }
+    }
+  }
+
+  /**
+    * Label color
+    */
+
+  &--red {
+    small {
+      color: $color-text-white-1;
+      background-color: $color-background-red-1;
+    }
+  }
+
+  &--orange {
+    small {
+      color: $color-text-white-1;
+      background-color: $color-background-orange-1;
+    }
+  }
+
+  &--gray {
+    small {
+      color: $color-text-gray-6;
+      background-color: $color-label--bg-gray;
+    }
+  }
+
+  /**
+  * Label type
+  */
+  &--bordered {
+    border: 1px solid $color-border-green-1;
+    border-radius: 2px;
+    small {
+      color: $color-text-green-1;
+      background-color: transparent;
+    }
+    &.dp-label--blue {
+      border: 1px solid $color-label-border-blue;
+      small {
+        color: $color-label-text-blue;
+      }
+    }
+  }
+  &--white-bg {
+    small {
+      background-color: $color-label--bg-text;
+      color: $color-text-green-1;
+    }
+    &.dp-label--blue {
+      small {
+        color: $color-label-text-blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    #POSITION
+\*------------------------------------*/
+
+/**
+  * Make element sticky
+  */
+
+@mixin sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  @content;
+}

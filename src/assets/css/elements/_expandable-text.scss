@@ -1,0 +1,30 @@
+@import "~assets/css/settings/style";
+
+.dp-expandable-text {
+  position: relative;
+  font-family: $font-family-primary;
+
+  &__content {
+    overflow: hidden;
+  }
+  & .hidden {
+    visibility: hidden;
+  }
+  & .disappear {
+    display: none;
+  }
+
+  &__measure-extra {
+    button {
+      color: $color-text-green-1;
+      font-weight: bold;
+      cursor: pointer;
+      border: 0;
+      padding: 0;
+    }
+  }
+
+  & button:focus {
+    color: $color-text-green-2;
+  }
+}

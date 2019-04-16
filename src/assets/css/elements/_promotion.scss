@@ -1,0 +1,265 @@
+/**
+  * Promotion Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/promotion";
+
+/**
+  * Default Promotion style
+  */
+
+.dp-promotion {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 1;
+
+  align-items: center;
+  padding: $padding-promotion;
+  height: 42px;
+  width: 100%;
+  background-color: $color-promotion-bg-gray-light;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  @include themify($themes-dp-Promotion) {
+    padding: themed("padding-promotion");
+  }
+
+  &>span {
+    margin-right: 8px;
+    font-family: $font-family-secondary;
+    font-size: $font-size-12;
+    color: $color-text-black-2;
+    display: inline-block;
+    line-height: $line-height-promotion-span;
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-12");
+    }
+    @include themify($themes-dp-Promotion) {
+      line-height: themed("line-height-promotion-span");
+    }
+    &.dp-promotion__icon {
+      flex: 0 1 auto;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      font-size: 0;
+      .fa {
+        margin-top: 5px;
+        &:before {
+          width: 16px;
+          background-size: contain;
+          height: 14px;
+        }
+      }
+    }
+
+    &.dp-promotion__text {
+      flex: 1 1 auto;
+      font-weight: $font-weight-promotion-text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+      @include themify($themes-dp-Promotion) {
+        font-weight: themed("font-weight-promotion-text");
+      }
+    }
+
+    &.dp-promotion__button {
+      flex: 0 1 auto;
+      margin-right: 0;
+      .dp-button--text {
+        color: $color-text-blue-1;
+        display: inline-block;
+        padding: $padding-promotion-button;
+        .rippleJS .ripple {
+          background-color: rgba($color-background-blue-1, 0.2);
+        }
+        @include themify($themes-fonts) {
+          font-family: themed("font-family-primary");
+        }
+        @include themify($themes-dp-Promotion) {
+          padding: themed("padding-promotion-button");
+        }
+      }
+    }
+  }
+}
+
+/**
+  * Promotion popover
+  */
+
+$promotion-popover-arrow-width: 30px !important;
+$promotion-popover-arrow-height: 18px !important;
+
+.dp-com-promotion-popup {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  div {
+    height: 100%;
+  }
+}
+
+.dp-popover__popup.dp-popover__promotion {
+  max-width: 300px;
+  padding: 12px;
+  border: 0 none;
+  background-color: $color-background-white-1;
+  box-shadow: 0 2px 6px 0 rgba($color-box-shadow-black-1, 0.25);
+  .dp-popover__arrow {
+    border: 0 none;
+    width: $promotion-popover-arrow-width;
+    height: $promotion-popover-arrow-height;
+    &:after {
+      border: 0 none;
+      width: $promotion-popover-arrow-width;
+      height: $promotion-popover-arrow-height;
+      margin: 0 !important;
+      background-image: url("~assets/images/icons/caret-down.svg");
+      background-size: cover;
+    }
+  }
+  &[x-placement^="top"] .dp-popover__arrow {
+    bottom: -16px;
+  }
+  &[x-placement^="bottom"] .dp-popover__arrow {
+    top: -14px;
+    transform: rotate(180deg);
+  }
+  &[x-placement^="right"] .dp-popover__arrow {
+    left: -21px;
+    transform: rotate(90deg);
+  }
+  &[x-placement^="left"] .dp-popover__arrow {
+    right: -21px;
+    transform: rotate(-90deg);
+  }
+  &--list-view {
+    width: 300px !important;
+    margin-left: 48px;
+    &[x-placement^="top"] {
+      top: 10px !important;
+      left: 3px !important;
+      .dp-popover__arrow {
+        left: 4px !important;
+      }
+      @include themify($themes-dp-Promotion) {
+        left: themed("left-promotion-popover");
+      }
+    }
+    &[x-placement^="right"] {
+      top: -1px !important;
+      margin-left: 10px !important;
+      @include themify($themes-dp-Promotion) {
+        top: themed("top-promotion-popover");
+      }
+    }
+  }
+}
+
+.dp-popover__promotion {
+  .dp-popover__title,
+  .dp-popover__content {
+    color: $color-text-black-2;
+  }
+  .dp-popover__title {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    line-height: 19px;
+    font-family: $font-family-primary;
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+    }
+    h3 {
+      padding-top: 0;
+      padding-bottom: 10px;
+      font-size: $font-size-base;
+      border-bottom-color: $color-border-gray-3;
+      border-bottom-width: 1px;
+      @include themify($themes-fonts) {
+        font-size: themed("font-size-base");
+      }
+      @include themify($themes-dp-Promotion) {
+        line-height: themed("line-height-promotion-title");
+      }
+    }
+  }
+  .dp-popover__content {
+    padding: 14px 4px 12px 0;
+    font-family: $font-family-secondary;
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+    }
+    .dp-promotion__icon {
+      position: absolute;
+      left: 0;
+      .fa:before {
+        width: 16px;
+        background-size: contain;
+        height: 14px;
+      }
+    }
+    dl+dl {
+      margin-top: 16px;
+    }
+    dt {
+      position: relative;
+      padding-left: 27px;
+      font-size: $font-size-14;
+      font-weight: bold;
+      line-height: 17px;
+      margin-bottom: 8px;
+      font-family: $font-family-primary;
+      @include themify($themes-dp-Promotion) {
+        line-height: themed("line-height-promotion-content-title");
+      }
+      @include themify($themes-fonts) {
+        font-size: themed("font-size-14");
+        font-family: themed("font-family-primary");
+      }
+    }
+    dd {
+      font-size: $font-size-12;
+      line-height: 17px;
+      margin-left: 27px;
+      @include themify($themes-fonts) {
+        font-size: themed("font-size-10");
+      }
+      @include themify($themes-dp-Promotion) {
+        line-height: themed("line-height-promotion-content-item");
+      }
+      time {
+        display: block;
+        margin-top: 16px;
+        color: $color-text-gray-6;
+        font-style: italic;
+        font-size: $font-size-10;
+        line-height: 14px;
+        @include themify($themes-fonts) {
+          font-size: themed("font-size-10");
+        }
+        @include themify($themes-dp-Promotion) {
+          line-height: themed("line-height-promotion-content-item");
+        }
+      }
+      figure {
+        margin: 0 0 8px 0;
+        img {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

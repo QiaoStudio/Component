@@ -1,0 +1,28 @@
+@import "../../../settings/style";
+/**
+  * Premium
+  */
+
+$font-weight-bold-th: 700;
+$color-black-th: $color-text-black-2;
+$line-height-discount: 15px;
+$line-height-value: px-to-rate(40px, 40px);
+$line-height-unit: px-to-rate(19px, 14px);
+$padding-premium-other: 2px;
+$margin-premium-discount: 9px;
+/**
+  * Themes
+  */
+
+$themes-dp-premium: (
+  th: (
+    font-weight: $font-weight-bold-th,
+    color: $color-black-th,
+    line-height-discount: 14px,
+    line-height-value: px-to-rate(40px, 54px),
+    line-height-unit: 24px,
+    padding-premium-other: 4px,
+    margin-premium-discount: 0,
+    color-premium-unit: $color-text-black-2
+  )
+);

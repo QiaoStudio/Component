@@ -1,0 +1,57 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/progress-bar";
+/**
+  * Default Progress bar style
+  */
+
+$background-percent-bar: linear-gradient(270deg, $color-background-blue-1 0%, $color-background-green-1 100%);
+.dp-progress-bar {
+  font-family: $font-family-primary;
+  color: $color-text-gray-5;
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__status-bar {
+    border-radius: 2px;
+    background: $background-progress-bar;
+  }
+
+  &__percent-bar {
+    border-radius: 2px;
+    background: $background-percent-bar;
+    transition: width 300ms ease-in-out;
+    line-height: px-to-rate(32px, 12px);
+  }
+
+  &__description {
+    font-size: $font-size-12;
+    margin-top: 8px;
+    display: flex;
+
+    &--mobile {
+      @include xs {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      @include md {
+        display: none;
+      }
+      @include onlyTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__progress {
+    text-align: left;
+    flex: 1;
+  }
+
+  &__number {
+    text-align: right;
+  }
+}

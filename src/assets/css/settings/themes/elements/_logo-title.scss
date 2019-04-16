@@ -1,0 +1,16 @@
+@import "../../../settings/style";
+/**
+  * Logo
+  */
+
+$line-height-content: px-to-rate(19px, 14px);
+
+/**
+  * Themes
+  */
+
+$themes-dp-logo: (
+  th: (
+    line-height-content: px-to-rate(19px, 20px),
+  )
+);

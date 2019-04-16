@@ -1,0 +1,251 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/checkbox";
+/**
+  * Default Checkbox style
+  */
+
+.dp-field__checkbox {
+  position: relative;
+  font-size: $font-size-16;
+  padding-bottom: px-to-em(17px, 16px);
+  padding-left: px-to-em(24px, 16px);
+  text-align: left;
+  line-height: px-to-rate(19px, 16px);
+
+  input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    &:focus+label {
+      &:before {
+        border-color: $color-checkbox-label-border-focused;
+      }
+    }
+  }
+
+  label {
+    color: $color-checkbox-label;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: px-to-em(2px, 16px);
+      width: px-to-em(16px, 16px);
+      height: px-to-em(16px, 16px);
+      border: px-to-rem(1px) solid $color-checkbox-label-border;
+      border-radius: px-to-rem(2px);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: px-to-em(2px, 16px);
+      left: 0;
+      width: px-to-em(16px, 16px);
+      height: px-to-em(16px, 16px);
+      background-color: transparent;
+      transition: border-width 0.4s, background-color 0.4s;
+    }
+  }
+
+  input[type="checkbox"]:checked {
+
+    +label {
+
+      &:before {
+        left: px-to-em(5px, 16px);
+        top: px-to-em(4px, 16px);
+        width: px-to-em(6px, 16px);
+        height: px-to-em(10px, 16px);
+        border: solid $color-checkbox-label-border-checked;
+        border-width: 0 px-to-em(2px, 16px) px-to-em(2px, 16px) 0;
+        z-index: 1;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        background-color: $color-checkbox-label-bg-checked;
+        border-radius: px-to-rem(2px);
+      }
+    }
+  }
+
+  input[disabled="disabled"] {
+
+    +label {
+      color: $color-checkbox-label-disabled;
+      cursor: not-allowed;
+
+      &:before {
+        border-color: $color-checkbox-label-border-disabled;
+      }
+    }
+
+    &:checked+label {
+
+      &:after {
+        background-color: $color-checkbox-label-bg-checked-disabled;
+      }
+    }
+  }
+
+  &.error {
+    .dp-field__invalid {
+      display: block;
+    }
+  }
+
+  /* Support a variety of styles */
+  @include themify($themes) {
+    label {
+      color: themed("color-checkbox-label");
+
+      &:before {
+        border: px-to-rem(1px) solid themed("color-checkbox-label-border");
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      +label {
+        &:before {
+          border-color: themed("color-checkbox-label-border-checked");
+        }
+
+        &:after {
+          background-color: themed("color-checkbox-label-bg-checked");
+        }
+      }
+    }
+
+    input[disabled="disabled"] {
+
+      +label {
+        color: themed("color-checkbox-label-disabled");
+
+        &:before {
+          border-color: themed("color-checkbox-label-border-disabled");
+        }
+      }
+
+      &:checked+label {
+        &:after {
+          background-color: themed("color-checkbox-label-bg-checked-disabled");
+        }
+      }
+    }
+
+    input[type="checkbox"]:not(:checked) {
+      &:focus+label {
+        &:before {
+          border-color: themed("color-checkbox-label-border-focused");
+        }
+      }
+    }
+  }
+}
+
+/**
+  * Small Checkbox style
+  */
+
+.dp-field__checkbox--small {
+  @extend .dp-field__checkbox;
+  padding-bottom: px-to-em(17px, 12px);
+  padding-left: px-to-em(20px, 12px);
+  font-size: $font-size-12;
+
+  label {
+
+    &:before {
+      top: 0;
+      width: px-to-em(13px, 12px);
+      height: px-to-em(13px, 12px);
+    }
+
+    &:after {
+      transition: border-width 0.25s, background-color 0.25s;
+    }
+  }
+
+  input[type="checkbox"]:checked+label {
+
+    &:before {
+      left: px-to-em(4px, 12px);
+      top: px-to-em(2px, 12px);
+      width: px-to-em(5px, 12px);
+      height: px-to-em(8px, 12px);
+    }
+
+    &:after {
+      top: 0;
+      width: px-to-em(13px, 12px);
+      height: px-to-em(13px, 12px);
+    }
+  }
+}
+
+/**
+  * Checkbox error message style
+  */
+
+.dp-field__checkbox,
+.dp-field__checkbox-group {
+  font-family: $font-family-primary;
+
+  .dp-field__invalid {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: $color-checkbox-invalid;
+    font-size: $font-size-12;
+    line-height: px-to-rate(15px, 12px);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  /* Support a variety of styles */
+  @include themify($themes) {
+    .gb-field__invalid {
+      color: themed("color-checkbox-invalid");
+    }
+  }
+}
+
+/**
+  * Checkbox group style
+  */
+
+.dp-field__checkbox-group {
+  position: relative;
+  padding-bottom: px-to-rem(7px);
+
+  .dp-field__checkbox {
+    padding-bottom: 0;
+    margin-bottom: px-to-rem(12px);
+    margin-left: px-to-rem(12px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  // .dp-field__checkbox--small {
+  //   margin-bottom: px-to-rem(8px);
+  // }
+
+  &.error {
+
+    .dp-field__checkbox {
+      .dp-field__invalid {
+        display: none; // this can remove when the error msg put in group level
+      }
+    }
+
+    .dp-field__invalid {
+      display: block;
+    }
+  }
+}

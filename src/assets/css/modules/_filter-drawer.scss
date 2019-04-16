@@ -1,0 +1,41 @@
+@import "~assets/css/settings/style";
+
+$drawer-header-height: 40px;
+$drawer-padding-bottom: 80px;
+
+.dp-filter-drawer {
+  .dp-modal__close,
+  .dp-modal__footer {
+    display: none;
+  }
+  .dp-modal__dialog {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+  }
+  .dp-modal__content {
+    position: absolute;
+    height: 60vh;
+    border-radius: 0;
+    bottom: 0;
+    overflow: scroll;
+  }
+  &__header {
+    height: $drawer-header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: $color-background-white-1;
+    box-shadow: 0 1px 3px 0 rgba($color-box-shadow-black-1, 0.25);
+  }
+  &__content {
+    margin-top: $drawer-header-height;
+    padding: 24px 32px;
+    padding-bottom: $drawer-padding-bottom;
+  }
+}

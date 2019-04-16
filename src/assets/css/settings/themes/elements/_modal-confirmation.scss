@@ -1,0 +1,17 @@
+/**
+* modal confirmation
+*/
+$color-modal-confirmation-text: $color-text-black-1;
+$color-modal-confirmation-head-border: $color-border-gray-3;
+$color-modal-confirmation-boxshadow-color: rgba($color-box-shadow-black-1, 0.25);
+
+/**
+* themes
+*/
+$themes: (
+  dark: (
+    color-modal-confirmation-text: $color-text-black-1,
+    color-modal-confirmation-head-border: $color-border-gray-3,
+    color-modal-confirmation-boxshadow-color: rgba($color-box-shadow-black-1, 1),
+  )
+);

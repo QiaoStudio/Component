@@ -1,0 +1,20 @@
+@import "~assets/css/settings/style";
+
+.dp-update-info {
+  font-family: $font-family-primary;
+  font-size: $font-size-12;
+  color: $color-text-gray-5;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+
+  &__line {
+    background-color: $color-background-gray-5;
+    width: 40px;
+    height: 1px;
+  }
+
+  &__content {
+    padding: 0 16px;
+  }
+}

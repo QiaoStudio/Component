@@ -1,0 +1,261 @@
+/**
+  * Footer Theme settings
+  */
+
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/modules/footer";
+
+/**
+  * Default Footer style
+  */
+
+.dp-footer {
+  display: flex;
+  padding-top: $padding-y-footer;
+  padding-bottom: $padding-y-footer;
+  padding-left: $padding-x-footer;
+  padding-right: $padding-x-footer;
+  background-color: $background-color-footer;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    @include md {
+      text-align: left;
+    }
+  }
+
+  .dp-link {
+    font-family: $font-family-primary;
+    font-size: $font-size-14;
+    font-weight: 400;
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-14");
+    }
+    &:not(:hover) {
+      color: $color-text-white-1;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: $font-size-12;
+    font-family: $font-family-primary;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-text-white-1;
+    line-height: 1;
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-primary");
+      font-size: themed("font-size-12");
+    }
+    @include md {
+      margin-bottom: $margin-bottom-footer-dp-title;
+      text-align: left;
+    }
+  }
+
+  &__social {
+    margin-bottom: $margin-bottom-footer-social;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    @include md {
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .dp-footer__title {
+      display: inline-block;
+      padding-right: 0;
+      padding-left: 0;
+      vertical-align: middle;
+    }
+    ul {
+      display: inline-block;
+      vertical-align: middle;
+      li {
+        display: inline-block;
+        margin-left: $margin-left-footer-social-links;
+      }
+      @include md {
+        display: block;
+        li {
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    a {
+      position: relative;
+      display: block;
+      border-radius: $border-radius-footer-social-icons;
+      width: $width-footer-social-icons;
+      height: $height-footer-social-icons;
+      font-size: $font-size-footer-social-icons;
+      text-align: center;
+      color: $color-footer-social-icons;
+      background-color: $background-color-footer-social-icons;
+      outline: none;
+
+      .fa {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &.fa-google-plus {
+          transform: translate(-50%, -50%) scale(0.9);
+        }
+      }
+    }
+  }
+
+  &__country {
+    ul {
+      text-align: center;
+      @include md {
+        height: $height-footer-country;
+        text-align: left;
+      }
+      li {
+        display: inline-block;
+        margin-left: $margin-x-footer-country-links-xs;
+        margin-right: $margin-x-footer-country-links-xs;
+        &:first-child {
+          margin-left: 0;
+        }
+        @include sm {
+          margin-left: $margin-x-footer-country-links-sm;
+          margin-right: $margin-x-footer-country-links-sm;
+        }
+      }
+    }
+    a {
+      display: block;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    span {
+      display: block;
+      border-top: 1px solid $color-footer-white-faded;
+      margin-top: $margin-y-footer-copyright;
+      padding-top: $padding-top-footer-policy;
+      font-family: $font-family-secondary;
+      font-size: $font-size-9;
+      text-transform: uppercase;
+      color: $color-footer-copyright-text;
+      @include md {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      @include themify($themes-fonts) {
+        font-family: themed("font-family-secondary");
+        font-size: themed("font-size-8");
+      }
+    }
+  }
+
+  &__policy {
+    margin-top: $margin-top-footer-policy;
+    @include md {
+      margin-top: 0;
+    }
+    .dp-link {
+      font-size: $font-size-9;
+      font-weight: 700;
+      text-transform: uppercase;
+      @include themify($themes-fonts) {
+        font-size: themed("font-size-8");
+      }
+    }
+    ul {
+      text-align: center;
+      li {
+        display: inline-block;
+        .dp-link {
+          display: block;
+          border-right: 1px solid $color-border-white-1;
+          margin-right: $margin-right-footer-policy-links;
+          padding-right: $padding-right-footer-policy-links;
+          height: $height-footer-policy-links;
+          line-height: $height-footer-policy-links;
+        }
+        &:last-child {
+          .dp-link {
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0;
+          }
+        }
+      }
+      @include md {
+        text-align: right;
+      }
+    }
+  }
+
+  .container {
+    @include tabletAndMobile {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .row {
+      &:first-child {
+        &>div {
+          display: none;
+          &:first-child {
+            padding-left: 0;
+            .dp-footer__title,
+            ul li {
+              padding-left: 0;
+            }
+          }
+          &:last-child {
+            display: block;
+          }
+        }
+      }
+      @include md {
+        margin-left: 0;
+        margin-right: 0;
+        ul li {
+          margin-bottom: $margin-bottom-footer-dp-links;
+        }
+        &:first-child {
+          border-bottom: 1px solid $color-footer-white-faded;
+          padding-bottom: $spacing-60;
+          &>div {
+            display: block;
+            .dp-footer__title,
+            ul li {
+              padding-left: 0;
+            }
+          }
+        }
+        &:last-child {
+          display: flex;
+          align-items: center;
+          padding-top: $spacing-24;
+          ul li {
+            margin-bottom: 0;
+          }
+          &>div {
+            &:first-child {
+              padding-left: 0;
+            }
+            &:last-child {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

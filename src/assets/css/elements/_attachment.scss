@@ -1,0 +1,287 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/globals/icons/style";
+@import "~assets/css/utilities/truncation";
+@import "~assets/css/settings/themes/elements/attachment";
+
+/**
+  * Default Attachment style
+  */
+
+.dp-attachment {
+  .dp-attachment__head {
+    height: 19px;
+    max-width: 370px;
+    text-align: left;
+    color: $color-text-gray-5;
+    font-family: $font-family-primary;
+    font-size: $font-size-16;
+    line-height: 19px;
+    margin-bottom: 4px;
+    @extend .dp-text-overflow;
+  }
+
+  .dp-attachment__error-message {
+    text-align: left;
+    color: $color-attachment-error-message;
+    font-size: $font-size-12;
+    font-family: $font-family-primary;
+    line-height: 15px;
+    margin-top: 2px;
+    @extend .dp-text-overflow;
+  }
+
+  .dp-attachment__body {
+    width: 100%;
+    max-width: 370px;
+    cursor: pointer;
+
+    #error-message-container {
+      cursor: default;
+    }
+
+    input[type="file"] {
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 0;
+    }
+
+    label,
+    .dz-message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      width: 100%;
+      height: 50px;
+      border-radius: $radius-attachment;
+      border: 1px dashed $color-border-gray-5;
+      transition: border 0.4s;
+
+      .dz-file-thumbnail {
+        background: $color-background-gray-3;
+        height: 120px;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          height: 54px;
+        }
+      }
+
+      &:hover {
+        border: 1px dashed $color-border-gray-6;
+      }
+
+      span {
+        display: table-cell;
+        font-family: $font-family-primary;
+        font-weight: 400;
+        font-size: $font-size-16;
+        color: $color-text-gray-6;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 19px;
+
+        a {
+          font-weight: bold;
+          color: $color-text-green-1;
+          &:hover {
+            color: $color-text-green-2;
+            text-decoration: underline;
+          }
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: bottom;
+        }
+
+        .fa {
+          color: $color-text-gray-6;
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .dz-preview {
+      position: relative;
+      margin-top: 16px;
+      text-align: left;
+
+      // File upload successfully completed
+      &.dz-success {
+
+        .dz-success-mark {
+          display: inline-block;
+        }
+
+        .dz-remove {
+          display: none;
+        }
+      }
+
+      // File upload errorZzz b0rk3d
+      &.dz-error {
+
+        .dz-error-mark {
+          display: inline-block;
+          top: 15px;
+        }
+      }
+
+      .dz-image {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+
+        img {
+          display: block;
+        }
+
+        &~.dz-error-message {
+          margin-top: -3px;
+        }
+      }
+
+      .dz-file {
+        display: table;
+        text-align: center;
+        background: $color-background-gray-3;
+
+        .fa {
+          display: table-cell;
+          font-size: px-to-rem(18px);
+          color: $color-text-gray-6;
+          vertical-align: middle;
+        }
+
+        &~.dz-error-message {
+          margin-top: 0;
+        }
+      }
+
+      .dz-details {
+        position: absolute;
+        top: 6px;
+        left: 48px;
+        width: calc(100% - 75px);
+        font-family: $font-family-primary;
+        font-weight: 400;
+        font-size: $font-size-12;
+        color: $color-text-gray-6;
+
+        .dz-size {
+          float: right;
+
+          strong {
+            font-weight: 400;
+          }
+        }
+
+        .dz-filename {
+          float: left;
+          max-width: calc(65% - 4px);
+          width: 100%;
+          @extend .dp-text-overflow;
+        }
+      }
+
+      .dz-progress {
+        position: absolute;
+        left: 48px;
+        top: 32px;
+        display: block;
+        width: calc(100% - 75px);
+        height: 4px;
+        background-color: rgba($color-background-green-1, 0.2);
+
+        .dz-upload {
+          display: block;
+          max-width: 346px;
+          height: 4px;
+          background-color: $color-background-green-1;
+          transition: width 0.4s;
+        }
+      }
+
+      .dz-success-mark,
+      .dz-error-mark {
+        position: absolute;
+        right: 0;
+        top: 18px;
+        display: none;
+        vertical-align: bottom;
+        font-size: $font-size-16;
+        color: $color-text-green-1;
+      }
+
+      .dz-success-mark {
+        .fa-trash {
+          color: $color-attachment-tarsh;
+        }
+      }
+
+      .dz-error-mark {
+        color: $color-text-red-1;
+      }
+
+      .dz-remove {
+        position: absolute;
+        right: 0;
+        top: 18px;
+        display: block;
+        font-size: 0;
+        color: $color-text-gray-6;
+        text-decoration: none;
+        @extend .fa;
+        @extend .fa-times;
+        &:before {
+          font-size: $font-size-16;
+        }
+      }
+
+      .dz-error-message {
+        padding-top: 4px;
+        font-family: $font-family-primary;
+        font-weight: 400;
+        font-size: $font-size-12;
+        color: $color-text-red-1;
+      }
+    }
+    &.dp-attachment--large-preview {
+      .dz-preview {
+        .dz-progress,
+        .dz-details {
+          left: 0;
+          width: calc(100% - 24px);
+        }
+
+        .dz-image {
+          overflow: hidden;
+          & img {
+            width: 0;
+          }
+        }
+      }
+      .dz-message {
+        overflow: hidden;
+        padding: 0;
+        &-image-thumbnail {
+          height: 120px;
+        }
+        .dp-attachment__thumbnail--large-preview {
+          height: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .dz-template {
+    display: none;
+  }
+}

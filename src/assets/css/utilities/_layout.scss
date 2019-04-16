@@ -1,0 +1,109 @@
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+  * Utility classes will help you achieve layouts found within Com
+  */
+
+/*
+ * Block
+ */
+
+.dp-block {
+  display: block;
+}
+
+/*
+ * Inline Block
+ */
+
+.dp-inline-block {
+  display: inline-block;
+}
+
+/*
+ * Flex
+ */
+
+.dp-flex {
+  display: flex;
+
+  // Justify Content
+  &-justify {
+
+    &-c {
+      justify-content: center;
+    }
+
+    &-sb {
+      justify-content: space-between;
+    }
+  }
+
+  // Align Items
+  &-align {
+
+    &-c {
+      align-items: center;
+    }
+
+    &-s {
+      align-items: stretch;
+    }
+  }
+
+  // Align Content
+  &-align-content {
+
+    &-c {
+      align-content: center;
+    }
+
+    &-sb {
+      align-content: space-between;
+    }
+  }
+}
+
+/**
+  * Horizontal Container
+  */
+
+.dp-horizontal-container {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .dp-horizontal-container__item {
+    display: inline-block;
+    margin-top: 12px;
+    margin-right: 12px;
+    box-sizing: content-box;
+  }
+
+  @include xs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    .dp-horizontal-container__item {
+      scroll-snap-align: center;
+      min-width: 100%;
+      margin-top: 0;
+
+      >* {
+        min-width: 100%;
+        max-width: 100%;
+      }
+
+      &:last-child:not(:first-child) {
+        padding-right: 12px;
+      }
+    }
+
+    &.dp-horizontal-container--proximity {
+      scroll-snap-type: x proximity;
+    }
+  }
+}

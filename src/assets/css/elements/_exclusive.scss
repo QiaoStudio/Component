@@ -1,0 +1,38 @@
+/**
+  * Exclusive Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/exclusive";
+
+/**
+  * Default Exclusive style
+  */
+
+.dp-exclusive {
+  color: $color-text-orange-5;
+  font-family: $font-family-secondary;
+  font-size: $font-size-12;
+  font-weight: 700;
+  line-height: 16px;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed("font-size-12");
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:last-child {
+      margin-left: 2px;
+    }
+
+    @include themify($themes-dp-exclusive) {
+
+      &:last-child {
+        margin-top: themed("margin");
+      }
+    }
+  }
+}

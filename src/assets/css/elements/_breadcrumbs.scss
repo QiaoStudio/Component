@@ -1,0 +1,48 @@
+/**
+  * Breadcrums Theme settings
+  */
+
+@import "~assets/css/settings/themes/elements/breadcrumbs";
+
+/**
+* Default Breadcrums style
+*/
+
+.dp-breadcrumbs {
+  color: $color-text-gray-5;
+  font-family: $font-family-primary;
+  font-weight: bold;
+  text-align: left;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  i {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  @include xs {
+    font-size: $font-size-12;
+  }
+  @include md {
+    font-size: $font-size-14;
+  }
+  @include onlyTablet {
+    font-size: $font-size-12;
+  }
+
+  &__link {
+    a:hover, a:focus {
+      color: $color-text-green-2;
+    }
+  }
+  &__text {
+    a {
+      cursor: text;
+    }
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,63 @@
+@import "~assets/css/settings/style";
+
+.dp-table {
+  &--secondary-simple {
+    @extend %table-secondary-simple;
+  }
+}
+
+%table-secondary-simple {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  table {
+    background-color: $color-background-gray-2;
+    border-collapse: collapse;
+    white-space: pre-line;
+    color: $color-text-black-2;
+    font-size: $font-size-16;
+    font-family: $font-family-secondary;
+    @include md {
+      width: 100%;
+      table-layout: fixed;
+    }
+    @include onlyTablet {
+      width: 100%;
+      table-layout: fixed;
+    }
+    th, td {
+      min-width: 120px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    td {
+      background-color: $color-background-white-1;
+      vertical-align: top;
+      text-align: left;
+    }
+  }
+  .dp-table {
+    &--default-header {
+      tr>th {
+        vertical-align: bottom;
+        text-align: left;
+      }
+      tr>td {
+        border-top: 1px solid $color-background-gray-2;
+      }
+    }
+    &--left-header {
+      tr>th {
+        vertical-align: top;
+        text-align: left;
+      }
+      tr>td {
+        border-left: 1px solid $color-background-gray-2;
+      }
+    }
+    &__bold-cell {
+      font-weight: bold;
+    }
+  }
+}

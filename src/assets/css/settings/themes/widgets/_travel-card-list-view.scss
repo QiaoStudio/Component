@@ -1,0 +1,20 @@
+@import "../../../settings/style";
+/**
+  * themes
+  */
+$themes-dp-travel-card-list-view: (
+  th: (
+    line-height-travel-card-compare-button: 23px,
+    padding-travel-card-compare-button: 4px 16px,
+    padding-travel-card-body: 16px 6px 16px 16px,
+    padding-travel-card-discound-wrap: 0,
+    padding-left-travel-card-button-wrap: 6px,
+    padding-right-travel-card-button-wrap: 10px,
+    margin-left-bottom-button-wrap: 50px,
+    margin-left-bottom-button-wrap-with-discount: 25px,
+    margin-top-right-button-wrap-with-discount: 8px,
+    font-size-travel-card-provider-button: $font-size-18,
+    line-height-travel-card-provider-button: 23px,
+    margin-right-travel-card-right-menu-button: -10px
+  )
+);

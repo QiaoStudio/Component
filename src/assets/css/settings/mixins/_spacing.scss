@@ -1,0 +1,97 @@
+@mixin mapSpacing($position, $spacingStyle, $onlyClass: null) {
+  @each $key, $value in $spacing {
+    $class: #{$position}-#{$key};
+    @if ($onlyClass != null) {
+      $class: #{$position}-#{$key}--#{$onlyClass};
+    }
+
+    @if ($position == "all") {
+      @if ($onlyClass != null) {
+        .dp-#{$spacingStyle}-all-#{$key}--#{$onlyClass} {
+          #{$spacingStyle}: #{$value};
+        }
+      }
+      @else {
+        .dp-#{$spacingStyle}-all-#{$key} {
+          #{$spacingStyle}: #{$value};
+        }
+      }
+    }
+
+    @else if ($position == "x") {
+      .dp-#{$spacingStyle}-#{$class} {
+        #{$spacingStyle}-left: #{$value};
+        #{$spacingStyle}-right: #{$value};
+      }
+    }
+    @else if ($position == "y") {
+      .dp-#{$spacingStyle}-#{$class} {
+        #{$spacingStyle}-top: #{$value};
+        #{$spacingStyle}-bottom: #{$value};
+      }
+    }
+    @else {
+      .dp-#{$spacingStyle}-#{$class} {
+        #{$spacingStyle}-#{$position}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin removeSpacing($position, $spacingStyle) {
+  @if ($position == "all") {
+    .dp-#{$spacingStyle}-all-none {
+      #{$spacingStyle}: 0 !important;
+    }
+  }
+  @else if ($position == "x") {
+    .dp-#{$spacingStyle}-x-none {
+      #{$spacingStyle}-left: 0 !important;
+      #{$spacingStyle}-right: 0 !important;
+    }
+  }
+  @else if ($position == "y") {
+    .dp-#{$spacingStyle}-y-none {
+      #{$spacingStyle}-top: 0 !important;
+      #{$spacingStyle}-bottom: 0 !important;
+    }
+  }
+  @else {
+    .dp-#{$spacingStyle}-#{$position}-none {
+      #{$spacingStyle}-#{$position}: 0 !important;
+    }
+  }
+}
+
+@mixin mapScreenWithBreakpoint($position, $spacingStyle, $screen) {
+  @if ($screen == "only-tablet" ) {
+    @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      @include mapSpacing($position, $spacingStyle, $screen);
+      @content;
+    }
+  }
+  @else if ($screen == "only-mobile-and-tablet" ) {
+    @media only screen and (max-width: $screen-md-max) {
+      @include mapSpacing($position, $spacingStyle, $screen);
+      @content;
+    }
+  }
+  @else if ($screen == "only-tablet-up" ) {
+    @media only screen and (min-width: $screen-md-min) {
+      @include mapSpacing($position, $spacingStyle, $screen);
+      @content;
+    }
+  }
+  @else if ($screen == "only-desktop" ) {
+    @media only screen and (min-width: $screen-lg-min) {
+      @include mapSpacing($position, $spacingStyle, $screen);
+      @content;
+    }
+  }
+  @else {
+    @media only screen and (min-width: $screen-xl-min) {
+      @include mapSpacing($position, $spacingStyle, $screen);
+      @content;
+    }
+  }
+}

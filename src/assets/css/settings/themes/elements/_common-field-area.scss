@@ -1,0 +1,109 @@
+/**
+  * common field area color
+  */
+$color-dp-character-counter-text: $color-text-green-2;
+$color-dp-field-area-text: transparent;
+$color-dp-field-area-text-focus: $color-text-black-2;
+$color-dp-field-area-border: $color-border-gray-5;
+$color-dp-field-area-border-hover: $color-border-gray-6;
+$color-dp-field-area-border-focus: $color-border-green-2;
+$color-dp-field-area-text-focus-label: $color-text-green-2;
+$color-dp-field-area-disable-border: $color-border-gray-disabled;
+$color-dp-field-area-disable-text: $color-text-gray-disabled;
+$color-dp-field-area-disable-bg: inherit;
+$color-dp-field-area-text-disable-label: $color-text-gray-disabled;
+$color-dp-field-label: $color-border-gray-5;
+$color-dp-field-icon: $color-text-gray-6;
+$color-dp-field-icon-fa: $color-text-black-2;
+$color-dp-field-invalid-text: $color-text-red-1;
+$color-dp-field-invalid-a-text: $color-text-green-1;
+$color-dp-field-active-area-text: $color-text-black-2;
+$color-dp-field-active-disable-text: $color-border-gray-disabled;
+$color-dp-field-active-placeholder: $color-border-gray-3;
+$color-dp-field-active-icon: $color-text-black-2;
+$color-dp-field-label-active-hover: $color-text-gray-5;
+$color-dp-field-active-error-label: $color-text-red-1;
+$color-dp-field-focus-border: $color-border-green-2;
+$color-dp-field-focus-label: $color-text-green-2;
+$color-dp-field-error-area-border: $color-border-red-1;
+$color-dp-field-disable-icon: $color-text-gray-disabled;
+$color-dp-field-disable-area-text: $color-text-gray-disabled;
+$color-dp-field-disable-area-border: $color-border-gray-disabled;
+$color-dp-field-disable-area-active-border: $color-border-gray-disabled;
+$color-dp-field-disable-area-label: $color-text-gray-disabled;
+
+$color-dp-field-dropdown-bg: $color-background-white-1;
+$color-dp-field-dropdown-title-text: $color-text-gray-5;
+$color-dp-field-dropdown-line-splitter-bg: $color-background-gray-2;
+$color-dp-field-dropdown-no-result-text: $color-text-gray-5;
+$color-dp-field-dropdown-group-title: $color-text-gray-5;
+$color-dp-field-select-option-line: $color-border-gray-3;
+$color-dp-field-dropdown-li-text: $color-text-black-2;
+$color-dp-field-dropdown-li-text-hover: $color-text-green-1;
+$color-dp-field-dropdown-li-a-text: inherit;
+$color-dp-field-dropdown-li-a-text-hover: inherit;
+$color-dp-field-dropdown-li-bg-hover: rgba($color-background-green-1, 0.3);
+$color-dp-field-dropdown-li-disabled-text: $color-text-gray-disabled;
+$color-dp-field-dropdown-li-disabled-bg: none;
+$color-dp-field-dropdown-li-disabled-a-text: $color-text-gray-disabled;
+$color-dropdown-click-bg: $color-background-green-1;
+
+/**
+  * common field area line height
+  */
+$line-height-dp-field-dropdown-no-result-text: 19px;
+$line-height-dp-field-dropdown: 18px;
+
+/**
+  * themes
+  */
+$themes-common-field: (
+  dark: (
+    color-dp-character-counter-text: $color-text-green-2,
+    color-dp-field-area-text: transparent,
+    color-dp-field-area-text-focus: $color-text-white-1,
+    color-dp-field-area-border: rgba($color-border-white-1, 0.7),
+    color-dp-field-area-border-hover: $color-border-white-1,
+    color-dp-field-area-border-focus: $color-border-green-2,
+    color-dp-field-area-text-focus-label: $color-text-green-2,
+    color-dp-field-area-disable-border: $color-border-gray-disabled,
+    color-dp-field-area-disable-text: $color-text-gray-disabled,
+    color-dp-field-area-disable-bg: inherit,
+    color-dp-field-area-text-disable-label: $color-text-gray-disabled,
+    color-dp-field-label: rgba($color-text-white-1, 0.7),
+    color-dp-field-icon: $color-text-white-1,
+    color-dp-field-icon-fa: $color-text-black-2,
+    color-dp-field-invalid-text: $color-text-red-1,
+    color-dp-field-invalid-a-text: $color-text-green-1,
+    color-dp-field-active-area-text: $color-text-white-1,
+    color-dp-field-active-disable-text: $color-text-gray-disabled,
+    color-dp-field-active-placeholder: $color-border-gray-3,
+    color-dp-field-active-icon: $color-text-white-1,
+    color-dp-field-label-active-hover: $color-text-white-1,
+    color-dp-field-active-error-label: $color-text-red-1,
+    color-dp-field-focus-text: $color-text-white-1,
+    color-dp-field-focus-border: $color-border-green-2,
+    color-dp-field-focus-label: $color-text-green-2,
+    color-dp-field-error-area-border: $color-border-red-1,
+    color-dp-field-disable-icon: $color-text-gray-disabled,
+    color-dp-field-disable-area-text: $color-text-gray-disabled,
+    color-dp-field-disable-area-border: $color-border-gray-disabled,
+    color-dp-field-disable-area-active-border:$color-border-gray-disabled,
+    color-dp-field-disable-area-label: $color-text-gray-disabled !important,
+    color-dp-field-dropdown-bg: $color-background-white-1,
+    color-dp-field-dropdown-title-text: $color-text-gray-5,
+    color-dp-field-dropdown-line-splitter-bg: $color-background-gray-2,
+    color-dp-field-dropdown-no-result-text: $color-text-gray-5,
+    color-dp-field-dropdown-group-title: $color-text-gray-5,
+    color-dp-field-select-option-line: $color-border-gray-3,
+    color-dp-field-dropdown-li-text: $color-text-black-2,
+    color-dp-field-dropdown-li-text-hover: $color-text-green-1,
+    color-dp-field-dropdown-li-a-text: inherit,
+    color-dp-field-dropdown-li-a-text-hover: inherit,
+    color-dp-field-dropdown-li-bg-hover: rgba($color-background-green-1, 0.3),
+    color-dp-field-dropdown-li-disabled-text: $color-text-gray-disabled,
+    color-dp-field-dropdown-li-disabled-bg: none,
+    color-dp-field-dropdown-li-disabled-a-text: $color-text-gray-disabled,
+    color-dropdown-click-bg: $color-background-green-1,
+  )
+);

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/modules/author-profile link button should has href case linkUrl has a value 1`] = `
+<div class="dp-author-profile">
+  <div class="dp-author-profile__avatar">
+    <img src="test">
+  </div>
+  <div class="dp-author-profile__content-wrap">
+    <div class="dp-theme-article">
+      <h2 class="dp-title dp-author-profile__author">Andre</h2>
+    </div>
+    <div class="dp-theme-blog">
+      <p class="dp-p--sub dp-author-profile__description">test</p>
+    </div>
+    <a class="dp-author-profile__link-button dp-link dp-link--author-profile" href="test">
+      test
+    </a>
+  </div>
+</div>
+`;
+
+exports[`/modules/author-profile link button should not has href case linkUrl value is null 1`] = `
+<div class="dp-author-profile">
+  <div class="dp-author-profile__avatar">
+    <img src="test">
+  </div>
+  <div class="dp-author-profile__content-wrap">
+    <div class="dp-theme-article">
+      <h2 class="dp-title dp-author-profile__author">Andre</h2>
+    </div>
+    <div class="dp-theme-blog">
+      <p class="dp-p--sub dp-author-profile__description">test</p>
+    </div>
+    <a class="dp-author-profile__link-button dp-link dp-link--author-profile">
+      test
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,29 @@
+@import "~assets/css/settings/mixins/spacing";
+/*------------------------------------*\
+    #MARGIN
+\*------------------------------------*/
+
+/**
+  * Adjust whitespace by applying horizontal and vertical margin helpers
+  */
+
+@each $position in $positions {
+
+  /*
+   * None
+   */
+
+  @include removeSpacing($position, "margin");
+
+  /*
+   * With Spacing
+   */
+  @include mapSpacing($position, "margin");
+
+  /**
+    * With spacing and breakpoint
+    */
+  @each $screen in $screens {
+    @include mapScreenWithBreakpoint($position, "margin", $screen);
+  }
+}

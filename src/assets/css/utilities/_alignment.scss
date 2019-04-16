@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #ALIGNMENT
+\*------------------------------------*/
+
+/**
+  * Utilities will assist with general alignment problems
+  */
+
+/**
+  * Center
+  */
+
+.dp-align-center {
+  display: flex !important;
+  align-items: center;
+  align-content: center;
+
+  .dp-align-col {
+    display: block;
+    margin: 0 auto;
+  }
+}

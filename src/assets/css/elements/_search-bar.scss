@@ -1,0 +1,146 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/autocomplete";
+@import "~assets/css/settings/themes/elements/search-bar";
+
+.dp-field__search-bar {
+  @extend %search-bar-base-style;
+  &.dp-field--large {
+    @extend %search-bar-large-style;
+  }
+}
+
+%search-bar-base-style {
+  background: $color-background-white-1;
+  box-shadow: 0 2px 8px 0 $color-search-bar-box-shadow;
+  max-width: $size-search-bar-max-size;
+  position: relative;
+  height: $size-search-bar-height;
+  border-radius: 4px;
+  .dp-field__autocomplete-wrap {
+    &:not(.dp-field--fixed) {
+      &>.multiselect__content-wrapper {
+        top: 50px;
+        &.multiselect--above {
+          bottom: 100%;
+        }
+      }
+      .dp-field {
+        &__area {
+          height: 100%;
+          padding-bottom: 0;
+          border: none;
+        }
+        .multiselect__input,
+        .multiselect__tags {
+          height: 100%;
+        }
+        .multiselect__input {
+          width: 100%;
+          flex: 1;
+          display: block;
+          height: $line-height-search-bar;
+          line-height: $line-height-search-bar;
+        }
+        .multiselect__tags {
+          padding-left: $padding-left-search-bar;
+          padding-right: $padding-right-search-bar;
+          overflow: hidden;
+          display: flex;
+        }
+        &__label {
+          padding-left: $padding-left-search-bar;
+          padding-right: $padding-right-search-bar;
+          height: $size-search-bar-label-height;
+          top: -1px;
+        }
+        &__autocomplete {
+          padding-top: 0;
+          padding-bottom: 0;
+          height: $size-search-bar-height;
+          &.active .focus,
+          &.active,
+          &.focus {
+            .dp-field__label {
+              display: none;
+            }
+          }
+        }
+        .multiselect__single {
+          line-height: $line-height-search-bar;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    &.dp-field--fixed {
+      .dp-field__label {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  .dp-field__search-icon {
+    background: url("~assets/images/search-icon.svg");
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    cursor: pointer;
+    display: inline-block;
+    width: $size-search-icon-width;
+    height: $size-search-icon-height;
+    background-size: cover;
+    z-index: 1;
+  }
+  .dp-com-error-popup {
+    left: 50%;
+    top: 4px;
+  }
+  &.dp-border-pill .multiselect__content-wrapper {
+    width: calc(100% - 40px);
+    left: 20px;
+  }
+}
+
+%search-bar-large-style {
+  max-width: $size-search-bar-max-size-large;
+  height: $size-search-bar-height-large;
+  border-radius: 6px;
+  .dp-field__autocomplete-wrap {
+    &:not(.dp-field--fixed) {
+      &>.multiselect__content-wrapper {
+        top: 64px;
+      }
+      .dp-field {
+        font-size: $font-size-18;
+        line-height: 23px;
+        &__label {
+          padding-left: $padding-left-search-bar-large;
+          padding-right: $padding-right-search-bar-large;
+          top: 4px;
+          line-height: $line-height-label-large;
+          margin-bottom: 0;
+          height: $size-search-bar-label-height-large;
+        }
+        &__autocomplete {
+          height: $size-search-bar-height-large;
+        }
+        .multiselect__tags {
+          padding-left: $padding-left-search-bar-large;
+          padding-right: $padding-right-search-bar-large;
+        }
+        .multiselect__input {
+          height: $line-height-search-bar-large;
+          line-height: $line-height-search-bar-large;
+        }
+        .multiselect__single {
+          line-height: $line-height-search-bar-large;
+        }
+      }
+    }
+  }
+  .dp-field__search-icon {
+    top: 20px;
+    right: 24px;
+    width: 23px;
+    height: 24px;
+  }
+}

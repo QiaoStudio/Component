@@ -1,0 +1,13 @@
+@import "~assets/css/elements/common-field-area";
+/**
+  ** textarea
+  **/
+.dp-field__textarea {
+  .dp-field__area {
+    min-height: px-to-rem(44px);
+    padding-bottom: px-to-rem(6px);
+    resize: none;
+    overflow-y: hidden;
+    line-height: inherit;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../../settings/style";
+/**
+  * Hero
+  */
+
+$min-height-hero-bg-large-default: 600px;
+$max-height-hero-bg-large-default: 1000px;
+$max-height-hero-bg-large-tablet: 1200px;
+
+$min-height-hero-bg-medium-default: 600px;
+$max-height-hero-bg-medium-default: 800px;
+$min-height-hero-bg-medium-tablet: 400px;
+$max-height-hero-bg-medium-tablet: 1000px;
+
+$min-height-hero-bg-small-default: 400px;
+$min-height-hero-bg-small-tablet: 600px;
+$max-height-hero-bg-small-tablet: 800px;
+
+$padding-hero-content-lg: $spacing-60;
+$padding-hero-content-md: $spacing-40;
+$padding-hero-content-sm: $spacing-24;
+$background-color-overlay: $color-background-black-1;
+
+/**
+  * Themes
+  */
+
+// $themes-dp-label: (
+//   dark: (
+//     color: color,
+//   )
+// );

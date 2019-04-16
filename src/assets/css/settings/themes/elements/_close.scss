@@ -1,0 +1,14 @@
+@import "../../../settings/style";
+/**
+  *  close
+  */
+$color-dp-close-bg: $color-background-black-2;
+
+/**
+  * themes
+  */
+$themes-dp-close: (
+  dark: (
+    color-dp-close-bg: $color-background-black-1,
+  )
+);

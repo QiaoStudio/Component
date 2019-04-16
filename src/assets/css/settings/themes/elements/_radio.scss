@@ -1,0 +1,23 @@
+$color-radio-label: $color-text-black-2;
+$color-radio-label-disabled: $color-text-gray-disabled;
+$color-radio-label-border: $color-border-black-2;
+$color-radio-label-border-disabled: $color-border-gray-disabled;
+$color-radio-checked-bg: $color-background-green-1;
+$color-radio-checked-bg-disabled: $color-background-gray-disabled;
+
+$color-radio-invalid: $color-text-red-1;
+
+/**
+  * themes
+  */
+$themes: (
+  dark: (
+    color-radio-label: $color-text-gray-5,
+    color-radio-label-disabled: $color-text-gray-disabled,
+    color-radio-label-border: $color-border-black-1,
+    color-radio-label-border-disabled: $color-border-gray-disabled,
+    color-radio-checked-bg: $color-border-black-2,
+    color-radio-checked-bg-disabled: $color-background-gray-disabled,
+    color-radio-invalid: $color-text-red-1
+  )
+);

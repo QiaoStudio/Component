@@ -1,0 +1,114 @@
+@import "~assets/css/elements/common-field-area";
+@import "~assets/css/settings/themes/elements/select";
+/**
+  ** select
+  **/
+
+.dp-field__select {
+  .dp-field__area {
+    position: relative;
+    cursor: pointer;
+
+    .rippleJS .ripple {
+      background-color: $color-dropdown-click-bg;
+    }
+
+    select {
+      opacity: 0;
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      color: inherit;
+      font-size: inherit;
+      border: none;
+      option {
+        color: $color-dp-field-dropdown-li-text;
+      }
+    }
+
+    .dp-field__select-holder {
+      position: relative;
+      width: calc(100% + #{px-to-em(14px, 16px)});
+      min-height: px-to-em(19px, 16px);
+      height: 100%;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+      color: inherit;
+      text-align: inherit;
+      border: none;
+      background: inherit;
+    }
+
+    /* Support a variety of styles */
+    @include themify($themes) {
+      select {
+        option {
+          color: themed("color-dp-field-dropdown-li-text");
+        }
+      }
+      .rippleJS .ripple {
+        background-color: themed("color-dropdown-click-bg");
+      }
+    }
+  }
+  &.dp-field__outline {
+    border: 1px solid $color-border-gray-3;
+    border-radius: $border-radius-base;
+  }
+  &.dp-field__shadow {
+    border-radius: $border-radius-base;
+    box-shadow: $box-shadow-base;
+  }
+  &.dp-field__shadow,
+  &.dp-field__outline {
+    padding: 0;
+    background: $color-dp-field-dropdown-bg;
+    .dp-field__area {
+      border: 0;
+      padding: 0;
+      .dp-field__select-holder {
+        padding: 12px 24px 12px 12px;
+        color: $color-dropdown-inner-label;
+        width: 100%;
+        font-size: $font-size-14;
+      }
+    }
+    &.dp-field {
+      .dp-field__icon {
+        right: 12px;
+        @include themify($themes) {
+          color: themed("color-dp-field-icon-fa");
+        }
+      }
+    }
+    .dp-field__select_label {
+      font-size: $font-size-12;
+    }
+  }
+  &.disabled,
+  &[disabled="disabled"] {
+    &.dp-field {
+      &__select-holder {
+        color: $color-text-gray-disabled;
+      }
+      &__outline,
+      &__shadow {
+        .dp-field__area {
+          .dp-field__select-holder {
+            color: $color-text-gray-disabled;
+          }
+        }
+        .dp-field__icon {
+          color: $color-text-gray-disabled;
+        }
+      }
+      &__outline {
+        border-color: $color-border-gray-disabled;
+      }
+    }
+  }
+}

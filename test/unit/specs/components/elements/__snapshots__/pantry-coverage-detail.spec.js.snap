@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`elements/Coverage Detail when pass coverage, should render response html 1`] = `
+<table class="dp-coverage-detail">
+  <tbody class="dp-coverage-detail__body">
+    <tr class="dp-coverage-detail__row">
+      <td class="dp-coverage-detail__cell-title">test</td>
+      <td class="dp-coverage-detail__cell-content"><strong>test</strong></td>
+    </tr>
+  </tbody>
+</table>
+`;

@@ -1,0 +1,105 @@
+@import "~assets/css/settings/themes/elements/heading";
+/**
+  * Heading 1
+  */
+@mixin dp-title($fontSize,$fontSizeDesktop:"",$highlight:"",$highlightTheme: "",$highlightLg:"",$highlightLgTheme:"") {
+  font-size: $fontSize;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  text-align: left;
+  line-height: 1;
+  &--light {
+    @extend %heading-light;
+  }
+
+  &--lead {
+    @extend %heading-lead;
+  }
+  @if ($fontSizeDesktop != "") {
+    .dp-title--highlight {
+      background: $highlight;
+      @include themify($themes-heading) {
+        background: themed($highlightTheme);
+      }
+    }
+    @include md {
+      font-size: $fontSizeDesktop;
+      .dp-title--highlight {
+        background: $highlightLg;
+        @include themify($themes-heading) {
+          background: themed($highlightLgTheme);
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  #{h}#{$i}.dp-title {
+    margin-top: 22px;
+    margin-bottom: 11px;
+  }
+}
+@for $i from 4 through 6 {
+  #{h}#{$i}.dp-title {
+    margin-top: 11px;
+  }
+}
+h1.dp-title {
+  @include dp-title($font-size-32,$font-size-40, $bg-heading-h1-highlight, "bg-heading-h1-highlight", $bg-heading-h1-highlight-lg, "bg-heading-h1-highlight-lg");
+}
+h2.dp-title {
+  @include dp-title($font-size-24,$font-size-32, $bg-heading-h2-highlight, "bg-heading-h2-highlight", $bg-heading-h2-highlight-lg, "bg-heading-h2-highlight-lg");
+}
+h3.dp-title {
+  @include dp-title($font-size-20,$font-size-24, $bg-heading-h3-highlight, "bg-heading-h3-highlight", $bg-heading-h3-highlight-lg, "bg-heading-h3-highlight-lg");
+}
+h4.dp-title {
+  @include dp-title($font-size-16,$font-size-20, $bg-heading-h4-highlight, "bg-heading-h4-highlight", $bg-heading-h4-highlight-lg, "bg-heading-h4-highlight-lg");
+}
+h5.dp-title {
+  @include dp-title($font-size-16, "");
+}
+h6.dp-title {
+  @include dp-title($font-size-12, "");
+}
+.dp-title--highlight {
+  position: relative;
+  display: inline;
+  padding-left: 0;
+  padding-right: 3px;
+}
+
+/**
+  * Subheading
+  */
+
+.dp-subtitle {
+  font-family: $font-family-secondary;
+  font-weight: 600;
+  text-align: left;
+
+  &--light {
+    @extend %heading-light;
+  }
+
+  &--lead {
+    @extend %heading-lead;
+  }
+}
+
+%heading-light {
+  color: $color-heading-light;
+  @include themify($themes-heading) {
+    color: themed("color-heading-light");
+  }
+}
+
+%heading-lead {
+  font-family: $font-family-secondary;
+  font-weight: 400;
+  color: $color-heading-lead;
+  @include themify($themes-heading) {
+    color: themed("color-heading-lead");
+  }
+}

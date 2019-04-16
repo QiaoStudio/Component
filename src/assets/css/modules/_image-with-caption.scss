@@ -1,0 +1,67 @@
+@import "~assets/css/settings/style";
+
+.dp-image-with-caption {
+  &__image_holder {
+    height: 100%;
+    margin: 0 auto;
+    &__image {
+      position: relative;
+      &--unexpandable {
+        cursor: default;
+      }
+      width: max-content;
+      max-width: 100%;
+      margin: auto;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+      cursor: zoom-in;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background: $color-background-white-1;
+        display: block;
+        top: -100vh;
+        left: -100vw;
+        width: 100%;
+        height: 100%;
+        padding: 100vh 100vw;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+      }
+      &--expanded {
+        cursor: zoom-out;
+        z-index: 1;
+        &:before {
+          opacity: 1;
+        }
+      }
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+      &__icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        padding: 0;
+        border: 0;
+        background-color: rgba($color-background-black-1, 0.7);
+        >* {
+          margin: 4px;
+        }
+      }
+    }
+    &__text {
+      .dp-image-with-caption__text--center {
+        text-align: center;
+      }
+    }
+  }
+}
+body.zooming {
+  overflow-x: hidden;
+}

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`elements/Megamenu when megamenu has columns, megamenu should match snapshot 1`] = `
+<div class="dp-megamenu">
+  <div><span>Compare insurance</span>
+    <ul class="dp-megamenu__link--two-column">
+      <li class="dp-megamenu__link">
+        <a href="/sg/travel-insurance" target="_self">
+          <dp-icon-stub type="product" category="travel-insurance" display="dp-icon--sm-only"></dp-icon-stub> <span class="dp-megamenu__link-label">Travel Insurance</span></a>
+      </li>
+      <li class="dp-megamenu__link">
+        <a href="/sg/car-insurance" target="_self">
+          <dp-icon-stub type="product" category="car-insurance" display="dp-icon--sm-only"></dp-icon-stub> <span class="dp-megamenu__link-label">Car Insurance</span></a>
+      </li>
+      <li class="dp-megamenu__link">
+        <a href="/sg/personal-accident" target="_self">
+          <dp-icon-stub type="product" category="health-insurance" display="dp-icon--sm-only"></dp-icon-stub> <span class="dp-megamenu__link-label">Driver &amp; Passenger' <br>Personal Accident</span></a>
+      </li>
+    </ul>
+  </div>
+  <div><span>Promotion</span>
+    <div>
+      <div class="dp-megamenu__article">
+        <a href="/sg/promotion" target="_self">
+          <div class="dp-megamenu__article-img">
+            <img src="https://picsum.photos/120" alt="Learn a bunch of stuff here">
+          </div>
+          <div><span class="dp-megamenu__article-title">Learn a bunch of stuff here</span>
+            <p class="dp-megamenu__article-desc">Don't miss the exclusive campaign because you don't want to.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

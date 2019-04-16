@@ -1,0 +1,56 @@
+@import "~assets/css/elements/popover";
+@import "~assets/css/settings/themes/elements/error-popup";
+
+.dp-com-error-popup {
+  position: absolute;
+  left: 5%;
+  top: 0;
+}
+
+.dp-popover {
+  &__popup-error {
+    color: $color-error-popup;
+    font-family: $font-family-primary;
+    background-color: $color-error-popup-bg;
+    border-radius: $radius-error-popup-border;
+    box-shadow: 0 2px 6px 0 $color-error-popup-boxshadow;
+    .fa-exclamation {
+      margin-right: 4px;
+    }
+    .dp-popover__content {
+      padding: $padding-error-popup-content;
+      font-size: $font-size-12;
+      line-height: 1.25;
+      & div:before {
+        display: inline-block;
+        font-size: $font-size-12;
+        font-family: "FontAwesome";
+        content: "\f06a";
+        margin-right: 6px;
+      }
+    }
+  }
+  &__popup-error[x-placement^="top"] {
+    .dp-popover__arrow {
+      border-top-color: $color-error-popup-arrow-border;
+      &:after {
+        border-top-color: $color-error-popup-arrow-border;
+      }
+    }
+  }
+  @include themify($themes) {
+    &__popup-error {
+      color: themed("color-error-popup");
+      background-color: themed("color-error-popup-bg");
+      box-shadow: 0 2px 6px 0 themed("color-error-popup-boxshadow");
+    }
+    &__popup-error[x-placement^="top"] {
+      .dp-popover__arrow {
+        border-top-color: themed("color-error-popup-arrow-border");
+        &:after {
+          border-top-color: themed("color-error-popup-arrow-border");
+        }
+      }
+    }
+  }
+}

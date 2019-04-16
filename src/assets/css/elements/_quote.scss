@@ -1,0 +1,48 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/quote";
+/**
+  * Heading 1
+  */
+.dp-quote {
+  width: 100%;
+  color: $color-quote;
+  font-size: $font-size-24;
+  font-family: $font-family-secondary;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  line-height: px-to-rate(33px, 24px);
+  word-break: break-word;
+  .dp-quote__content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &--pull {
+    background-color: $color-background-gray-1;
+    color: $color-quote-pull;
+    font-size: $font-size-18;
+    font-weight: normal;
+    font-style: normal;
+    line-height: px-to-rate(28px, 18px);
+    text-align: left;
+    .dp-quote__content {
+      width: auto;
+      padding: 20px;
+    }
+  }
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-secondary");
+    font-size: themed("font-size-24");
+    &--pull {
+      font-size: themed("font-size-18");
+    }
+  }
+  @include xs {
+    font-size: $font-size-20;
+    line-height: px-to-rate(27px, 20px);
+    &--pull {
+      font-size: $font-size-18;
+      line-height: px-to-rate(28px, 18px);
+    }
+  }
+}

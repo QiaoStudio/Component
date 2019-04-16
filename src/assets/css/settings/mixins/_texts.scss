@@ -1,0 +1,201 @@
+/*------------------------------------*\
+    #TEXT
+\*------------------------------------*/
+
+/**
+  * Heading Title
+  */
+
+@mixin heading-title($fontSize, $fontSizeDesktop: null, $highlight: null, $highlightTheme: null, $highlightLg: null, $highlightLgTheme: null) {
+  font-family: $font-family-primary;
+  font-size: map-get($font-sizes, $fontSize);
+  font-weight: 700;
+  text-align: left;
+  line-height: 1;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed($fontSize);
+  }
+
+  &.dp-title--light {
+    color: $color-heading-light;
+
+    @include themify($themes-text) {
+      color: themed("color-heading-light");
+    }
+  }
+
+  &.dp-title--lead {
+    font-family: $font-family-secondary;
+    font-weight: 400;
+    color: $color-heading-lead;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-secondary");
+    }
+
+    @include themify($themes-text) {
+      color: themed("color-heading-lead");
+    }
+  }
+
+  @if ($fontSizeDesktop) {
+
+    .dp-title--highlight {
+      background: $highlight;
+
+      @include themify($themes-text) {
+        background: themed($highlightTheme);
+      }
+    }
+
+    @include md {
+      font-size: map-get($font-sizes, $fontSizeDesktop);
+
+      @include themify($themes-fonts) {
+        font-size: themed($fontSizeDesktop);
+      }
+
+      .dp-title--highlight {
+        background: $highlightLg;
+
+        @include themify($themes-text) {
+          background: themed($highlightLgTheme);
+        }
+      }
+    }
+  }
+}
+
+/**
+  * Article Heading
+  */
+
+@mixin article-heading($colorText, $marginTop, $marginBottom, $fontSize, $lineHeight, $marginTopSmall: null, $marginBottomSmall: null, $fontSizeSmall: null, $lineHeightSmall: null, $marginTopLarge: null, $marginBottomLarge: null, $fontSizeLarge: null, $lineHeightLarge: null) {
+  display: block;
+  margin-top: $marginTop;
+  margin-bottom: $marginBottom;
+  font-size: map-get($font-sizes, $fontSize);
+  font-weight: 700;
+  text-align: left;
+  color: $colorText;
+  line-height: $lineHeight;
+  word-break: break-word;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed($fontSize);
+  }
+
+  @if ($marginTopSmall and $marginBottomSmall and $fontSizeSmall and $lineHeightSmall) {
+
+    @include sm {
+      margin-top: $marginTopSmall;
+      margin-bottom: $marginBottomSmall;
+      font-size: map-get($font-sizes, $fontSizeSmall);
+      line-height: $lineHeightSmall;
+
+      @include themify($themes-fonts) {
+        font-size: themed($fontSizeSmall);
+      }
+    }
+  }
+
+  @if ($marginTopLarge and $marginBottomLarge and $fontSizeLarge and $lineHeightLarge) {
+
+    @include lg {
+      margin-top: $marginTopLarge;
+      margin-bottom: $marginBottomLarge;
+      font-size: map-get($font-sizes, $fontSizeLarge);
+      line-height: $lineHeightLarge;
+
+      @include themify($themes-fonts) {
+        font-size: themed($fontSizeLarge);
+      }
+    }
+  }
+}
+
+/**
+  * Blog Heading
+  */
+
+@mixin blog-heading($color, $font-size, $line-height, $font-weight, $margin-top, $margin-bottom, $font-size-mobile: "", $line-height-mobile: "", $margin-top-mobile: "", $margin-bottom-mobile: "") {
+  margin-top: $margin-top-mobile;
+  margin-bottom: $margin-bottom-mobile;
+  font-family: $font-family-primary;
+  font-size: map-get($font-sizes, $font-size-mobile);
+  font-weight: $font-weight;
+  line-height: $line-height-mobile;
+  color: $color;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed($font-size-mobile);
+  }
+
+  @include sm {
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+    font-size: map-get($font-sizes, $font-size);
+    line-height: $line-height;
+
+    @include themify($themes-fonts) {
+      font-size: themed($font-size);
+    }
+  }
+}
+
+/**
+  * Blog Paragraph and Span
+  */
+
+@mixin blog-paragraph-and-span($font-size, $line-height, $color, $font-size-mobile, $line-height-mobile) {
+  display: block;
+  font-family: $font-family-secondary;
+  font-size: map-get($font-sizes, $font-size-mobile);
+  text-align: left;
+  color: $color;
+  line-height: $line-height-mobile;
+  word-break: break-word;
+
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-secondary");
+    font-size: themed($font-size-mobile);
+  }
+
+  @include sm {
+    font-size: map-get($font-sizes, $font-size);
+    line-height: $line-height;
+
+    @include themify($themes-fonts) {
+      font-size: themed($font-size);
+    }
+  }
+
+  &>a {
+    @extend .dp-link;
+    font-family: $font-family-secondary;
+    font-size: map-get($font-sizes, $font-size-mobile);
+    line-height: $line-height-mobile;
+
+    @include themify($themes-fonts) {
+      font-family: themed("font-family-secondary");
+      font-size: themed($font-size-mobile);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include sm {
+      font-size: map-get($font-sizes, $font-size);
+      line-height: $line-height;
+
+      @include themify($themes-fonts) {
+        font-size: themed($font-size);
+      }
+    }
+  }
+}

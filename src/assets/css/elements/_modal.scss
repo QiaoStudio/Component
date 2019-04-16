@@ -1,0 +1,295 @@
+@import "~assets/css/settings/style";
+@import "~assets/css/settings/themes/elements/modal";
+@import "~assets/css/elements/vertical-align";
+@import "~assets/css/elements/close";
+
+// Kill the scroll on the body
+.dp-modal-open {
+  overflow: hidden;
+}
+// Container that the modal scrolls within
+.dp-modal {
+  &--windowed {
+    @include xs {
+      .dp-modal__close {
+        width: 64px;
+        height: 64px;
+        padding: 0;
+        &:before,
+        &:after {
+          width: 22px;
+          left: 22px;
+          background-color: $color-modal-close-mobile-flex-bg;
+        }
+      }
+      .dp-modal__dialog {
+        height: 100%;
+      }
+      .dp-modal__content {
+        overflow-y: hidden;
+        height: auto;
+      }
+      .dp-modal__body {
+        overflow-y: auto;
+        height: auto;
+      }
+      .dp-modal__wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  &__wrap {
+    color: $color-modal-text;
+    display: none;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    // Prevent Chrome on Windows from adding a focus outline.
+    outline: 0;
+  }
+
+  &--vertical-align-helper {
+    text-align: center;
+    &:after {
+      display: inline-block;
+      content: "";
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+
+  &--vertical-align-center {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  // Open modal from top - Default
+  &--fade .dp-modal__dialog {
+    transform: translate(0, -25%);
+    transition: transform 0.3s ease-out;
+  }
+  &--in .dp-modal__dialog {
+    transform: translate(0, 0);
+  }
+
+  // Open modal from bottom
+  &--bottom {
+    .dp-modal--fade .dp-modal__dialog {
+      transform: translate(0, 100%);
+      transition: transform 0.3s ease-out;
+    }
+    .dp-modal--in .dp-modal__dialog {
+      transform: translate(0, 0);
+    }
+  }
+
+  // Open modal from right
+  &--right {
+    .dp-modal--fade .dp-modal__dialog {
+      right: -100%;
+      transition: opacity 0.3s linear, right 0.3s ease-out;
+    }
+    .dp-modal--in .dp-modal__dialog {
+      right: 0;
+    }
+  }
+
+  // Open modal from left
+  &--left {
+    .dp-modal--fade .dp-modal__dialog {
+      left: -100%;
+      transition: opacity 0.3s linear, left 0.3s ease-out;
+    }
+    .dp-modal--in .dp-modal__dialog {
+      left: 0;
+    }
+  }
+
+  &--full-screen {
+    .dp-modal__dialog {
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+    }
+    .dp__close {
+      right: 18px;
+      top: 18px;
+      position: absolute;
+    }
+    .dp-modal {
+      &__header,
+      &__content,
+      &__footer {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__dialog {
+    position: relative;
+    width: auto;
+    margin: $margin-modal-dialog;
+  }
+
+  &__content {
+    position: relative;
+    background-color: $color-modal-content-bg;
+    border: none;
+    border-radius: $radius-modal-content;
+    width: inherit;
+    height: inherit;
+    margin: 0 auto;
+    pointer-events: all;
+    background-clip: padding-box;
+    outline: 0;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal-background;
+    background-color: $color-modal-backdrop-bg;
+  }
+
+  &__header {
+    @include clearfix;
+    border-radius: $radius-modal-header $radius-modal-header 0 0;
+  }
+
+  &__close {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    opacity: 1;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  &__close:before,
+  &__close:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 24px;
+    top: 50%;
+    left: 7px;
+    margin-top: -1px;
+    background: $color-modal-close-bg;
+  }
+
+  &__close:before {
+    transform: rotate(45deg);
+  }
+
+  &__close:after {
+    transform: rotate(-45deg);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__footer {
+    &-sticky {
+      position: sticky;
+      bottom: 0;
+      z-index: 1;
+    }
+    background-color: $color-modal-footer-bg;
+    text-align: right;
+    border-top: 1px solid $color-modal-footer-border;
+    border-bottom-left-radius: $radius-modal-content;
+    border-bottom-right-radius: $radius-modal-content;
+    box-shadow: 0 2px 8px 0 $color-modal-footer-boxshadow;
+    @include clearfix;
+  }
+
+  @include sm {
+    &__dialog {
+      width: $size-modal-md;
+      margin: 80px auto;
+    }
+  }
+
+  @include xs {
+    &:not(.dp-modal--windowed) {
+      .dp-modal__header,
+      .dp-modal__content,
+      .dp-modal__footer {
+        border-radius: 0;
+      }
+    }
+    &__dialog {
+      width: 100%;
+      margin: 0;
+      margin-top: 0;
+    }
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 64px;
+      height: 64px;
+    }
+    &__close:before,
+    &__close:after {
+      width: 22px;
+      left: 20px;
+      background: $color-modal-close-mobile-bg;
+    }
+    &__content {
+      box-shadow: 0 2px 4px 0 $color-modal-content-boxshadow;
+    }
+  }
+
+  /* Support a variety of styles */
+  @include themify($themes) {
+    // Actual modal
+    &__content {
+      color: themed("color-modal-text");
+      background-color: themed("color-modal-content-bg");
+    }
+    &__backdrop {
+      background-color: themed("color-modal-backdrop-bg");
+    }
+    &__close:before,
+    &__close:after {
+      background: themed("color-modal-close-bg");
+    }
+    // Footer (for actions)
+    &__footer {
+      background-color: themed("color-modal-footer-bg");
+      border-top-color: themed("color-modal-footer-border-color");
+      box-shadow: 0 2px 8px 0 themed("color-modal-footer-boxshadow-color");
+    }
+    @include xs {
+      &__close:before,
+      &__close:after {
+        background: themed("color-modal-close-bg");
+      }
+      &__content {
+        box-shadow: 0 2px 4px 0 themed("color-modal-content-boxshadow");
+      }
+    }
+  }
+
+}

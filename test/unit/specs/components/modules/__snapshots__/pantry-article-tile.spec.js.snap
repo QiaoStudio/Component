@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/modules/article-tile when set the type to a null value,should return correct html 1`] = `
+<div class="dp-tile__article dp-tile__article--stacked dp-tile">
+  <div class="dp-tile__img-wrap">
+    <div role="img" aria-label="article image" class="dp-tile__img" style="background-image: url(https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/322fb61b32f50a13b88acced96470b6ec60960be51b88f1b9245961aa493108619b7d0afbe55963c26aae99a6769c112?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=3281858405&amp;fname=articale-tile-img.jpg&amp;size=750);"></div>
+  </div>
+  <div class="dp-tile__content">
+    <p class="dp-tile__info"> </p>
+  </div>
+</div>
+`;
+
+exports[`/modules/article-tile when tile url is set, tile should be rendered as a link 1`] = `<a href="/blog/category/a-article-content-page" class="dp-tile__article dp-tile__article--stacked dp-tile dp-tile__article--default" target="_blank"><span class="dp-tile__img-wrap"><div role="img" aria-label="article image" class="dp-tile__img" style="background-image: url(https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/322fb61b32f50a13b88acced96470b6ec60960be51b88f1b9245961aa493108619b7d0afbe55963c26aae99a6769c112?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=3281858405&amp;fname=articale-tile-img.jpg&amp;size=750);"></div></span>  <span class="dp-tile__content">  <p class="dp-tile__info">  </p></span></a>`;

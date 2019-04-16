@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`elements/Promotion promotion popover should show correct content case isShowPromotionPopover is true and has promotion contents 1`] = `
+<div class="dp-promotion"><span class="dp-promotion__icon"><i class="fa fa-megaphone"></i></span> <span class="dp-promotion__text">
+
+  </span> <span class="dp-promotion__button"><dp-button-stub ripple="true" class="dp-button--sm dp-button--text"><span>More</span></dp-button-stub>
+  </span>
+  <dp-popover-stub title="title" trigger="hover" appendtobody="true" display="<div></div>" content="<dl><dt><span class=&quot;dp-promotion__icon&quot;><i class=&quot;fa fa-megaphone&quot;></i></span>subtitle</dt><dd><figure><img src=&quot;abc&quot; alt=&quot;undefined&quot;></figure><p>content1</p></dd></dl><dl><dt><span class=&quot;dp-promotion__icon&quot;><i class=&quot;fa fa-megaphone&quot;></i></span>subtitle2</dt><dd><p>content2</p><time>05 06 2018</time></dd></dl>"
+    width="0" placement="top" popoverclass="dp-popover__promotion " offsetoption="[object Object]" preventoverflowoption="[object Object]" flipposition="flip" class="dp-com-promotion-popup"></dp-popover-stub>
+</div>
+`;
+
+exports[`elements/Promotion when actionLabel is set, promotion icon should shown and should not nest block elements 1`] = `
+<div class="dp-promotion"><span class="dp-promotion__icon"><i class="fa fa-megaphone"></i></span> <span class="dp-promotion__text">
+
+  </span> <span class="dp-promotion__button"><dp-button-stub ripple="true" class="dp-button--sm dp-button--text"><span>More</span></dp-button-stub>
+  </span>
+  <!---->
+</div>
+`;

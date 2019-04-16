@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #TRUNCATION
+\*------------------------------------*/
+
+/**
+  * When applying truncation, place the full text in a title attribute so that it’s accessible on hover
+  */
+
+/**
+  * Text Overflow
+  */
+
+.dp-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
